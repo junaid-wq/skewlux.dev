@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CPS Test — Clicks Per Second Speed Counter (1s, 5s, 10s) | SkewLux.dev</title>
+  <meta name="description" content="Measure how fast you can click in 1 second, 5 seconds, or 10 seconds with live CPS tracking and ripple feedback." />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <link rel="canonical" href="https://skewlux.dev/cps-test" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="CPS Test — Clicks Per Second Speed Counter (1s, 5s, 10s) | SkewLux.dev" />
+  <meta property="og:description" content="Measure how fast you can click in 1 second, 5 seconds, or 10 seconds with live CPS tracking and ripple feedback." />
+  <meta property="og:url" content="https://skewlux.dev/cps-test" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"CPS Test — Clicks Per Second Speed Counter","url":"https://skewlux.dev/cps-test","applicationCategory":"UtilitiesApplication","operatingSystem":"Web Browser","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+</head>
+<body class="bg-[#090d16] text-slate-100 min-h-screen flex flex-col font-sans antialiased selection:bg-emerald-500/30">
+  <header class="border-b border-slate-800/80 bg-[#090d16]/95 backdrop-blur sticky top-0 z-40">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-2.5 font-bold text-lg text-white tracking-tight">
+        <span class="w-8 h-8 rounded-lg bg-gradient-to-br from-emerald-500 to-indigo-600 flex items-center justify-center text-white font-black shadow-lg shadow-emerald-500/20">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path stroke-linecap="round" stroke-linejoin="round" d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        </span>
+        <span>SkewLux<span class="text-emerald-400">.dev</span></span>
+      </a>
+      <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-300">
+        <a href="/" class="hover:text-white transition">Reaction Test</a>
+        <a href="/typing-test" class="hover:text-white transition">Typing Speed</a>
+        <a href="/100-words-typing-test" class="hover:text-white transition">100 Words Test</a>
+        <a href="/sensitivity-converter" class="hover:text-white transition">Sens Converter</a>
+        <a href="/cps-polling-test" class="hover:text-white transition">CPS &amp; Hz Test</a>
+        <a href="/guides/human-reaction-time-science" class="text-emerald-400 hover:text-emerald-300 transition">Guides</a>
+      </nav>
+    </div>
+    <nav class="md:hidden flex items-center gap-4 overflow-x-auto px-4 py-2.5 border-t border-slate-800/70 text-xs font-medium text-slate-300 whitespace-nowrap bg-[#070a12]">
+      <a href="/" class="hover:text-white">Reaction</a>
+      <a href="/typing-test" class="hover:text-white">Typing WPM</a>
+      <a href="/100-words-typing-test" class="hover:text-white">100 Words</a>
+      <a href="/sensitivity-converter" class="hover:text-white">Sens Converter</a>
+      <a href="/cps-polling-test" class="hover:text-white">CPS &amp; Hz</a>
+      <a href="/guides/human-reaction-time-science" class="text-emerald-400">Guides</a>
+    </nav>
+  </header>
+  <main class="flex-1 max-w-6xl w-full mx-auto px-4 sm:px-6 py-8 sm:py-10">
+    <style>
+      @keyframes rippleAnim {
+        0% { transform: scale(0.1); opacity: 0.75; }
+        100% { transform: scale(2.8); opacity: 0; }
+      }
+      .cps-ripple {
+        position: absolute;
+        width: 72px;
+        height: 72px;
+        border-radius: 9999px;
+        background: rgba(251, 191, 36, 0.45);
+        pointer-events: none;
+        animation: rippleAnim 0.45s ease-out forwards;
+      }
+    </style>
+
+    <section class="mb-6">
+      <span class="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-amber-500/15 text-amber-300 border border-amber-500/30 mb-2">Mouse Switch &amp; USB Polling Benchmark</span>
+      <h1 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">CPS Test — Clicks Per Second Speed Counter</h1>
+      <p class="text-slate-300 text-sm sm:text-base mt-2 max-w-3xl">Test your single-finger, jitter-click, or butterfly-click speed in Clicks Per Second (CPS) with saved personal records.</p>
+    </section>
+
+    <section class="grid lg:grid-cols-12 gap-6 mb-12">
+      <div class="lg:col-span-6 bg-slate-900/75 border border-slate-800 rounded-2xl p-5 sm:p-6 flex flex-col justify-between space-y-4">
+        <div class="flex items-center justify-between">
+          <div class="flex gap-2 text-xs">
+            <button data-csec="1" class="c-sec px-3 py-1.5 rounded-lg bg-slate-800 text-slate-200 border border-slate-700 font-semibold">1s</button>
+            <button data-csec="5" class="c-sec px-3 py-1.5 rounded-lg bg-amber-600 text-white font-semibold">5s</button>
+            <button data-csec="10" class="c-sec px-3 py-1.5 rounded-lg bg-slate-800 text-slate-200 border border-slate-700 font-semibold">10s</button>
+          </div>
+          <div class="text-xs text-slate-400">Time Left: <strong id="cTimer" class="text-amber-400 font-mono">5.0s</strong></div>
+        </div>
+
+        <div class="w-full h-1.5 rounded-full bg-slate-950 overflow-hidden border border-slate-800">
+          <div id="cBar" class="h-full bg-amber-500 transition-all duration-75" style="width:100%"></div>
+        </div>
+
+        <button id="cPad" type="button" class="relative overflow-hidden w-full h-56 rounded-2xl bg-gradient-to-br from-indigo-950/90 to-slate-950 hover:border-amber-500/50 border-2 border-indigo-500/40 flex flex-col items-center justify-center text-center p-4 cursor-pointer select-none transition">
+          <div id="cTier" class="text-[11px] font-bold uppercase tracking-widest text-amber-400 mb-1">Ready</div>
+          <div id="cMain" class="text-3xl sm:text-4xl font-black text-white">Click Here to Start</div>
+          <div id="cSub" class="text-xs text-slate-300 mt-1.5">Clicks: 0 | Live Pace: 0.0 CPS</div>
+        </button>
+
+        <div class="flex justify-between items-center text-xs">
+          <div class="flex gap-4">
+            <span class="text-slate-400">Session Best: <strong id="cBest" class="text-emerald-400 font-mono">0.0 CPS</strong></span>
+            <span class="text-slate-400">All-Time: <strong id="cAllBest" class="text-amber-400 font-mono">0.0 CPS</strong></span>
+          </div>
+          <button id="cReset" type="button" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-semibold">Reset CPS</button>
+        </div>
+      </div>
+
+      <div class="lg:col-span-6 bg-slate-900/75 border border-slate-800 rounded-2xl p-5 sm:p-6 flex flex-col justify-between space-y-4">
+        <div class="flex items-start justify-between gap-2">
+          <div>
+            <div class="text-xs font-semibold uppercase tracking-wider text-emerald-400">Live USB Mouse Polling Analyzer</div>
+            <h2 class="text-xl font-bold text-white mt-0.5">Move Cursor Inside Sensor Box</h2>
+          </div>
+          <span id="hzBadge" class="px-2.5 py-1 rounded-md text-[11px] font-semibold bg-slate-800 text-slate-300 border border-slate-700">Waiting...</span>
+        </div>
+
+        <div id="hzBox" class="relative overflow-hidden w-full h-56 rounded-2xl bg-[#060911] border border-slate-800 flex flex-col items-center justify-center text-center p-4 select-none cursor-crosshair">
+          <div id="hzDot" class="hidden w-3 h-3 rounded-full bg-emerald-400/80 shadow-[0_0_12px_#34d399] pointer-events-none absolute -translate-x-1/2 -translate-y-1/2"></div>
+          <div id="hzNow" class="text-5xl font-black text-emerald-400 font-mono relative z-10">0 Hz</div>
+          <div id="hzPeak" class="text-xs text-slate-400 mt-2 relative z-10">Peak: 0 Hz | Interval: -- ms</div>
+          <div id="hzBars" class="flex items-end justify-center gap-1 h-10 mt-4 w-48 relative z-10"></div>
+        </div>
+
+        <div class="text-xs text-slate-400">Office mice &amp; laptop trackpads report at <strong>125 Hz (8 ms)</strong>; gaming mice run at <strong>1000 Hz (1 ms)</strong> or <strong>4000 Hz+</strong>.</div>
+      </div>
+    </section>
+
+    <article class="max-w-4xl space-y-6 text-slate-300 leading-relaxed">
+      <h2 class="text-2xl font-bold text-white">Understanding CPS Benchmarks &amp; USB Polling Rates</h2>
+      <p>Regular single-finger clicking averages <strong>6.0 to 7.5 CPS</strong>, while jitter-clicking and butterfly-clicking techniques reach <strong>11 to 16+ CPS</strong>. Meanwhile, USB polling rate determines how many times per second your mouse reports sensor displacement to Windows or macOS—upgrading from 125 Hz to 1000 Hz cuts maximum cursor reporting latency from 8.0 ms down to 1.0 ms.</p>
+    </article>
+
+    <script>
+      (function() {
+        let cDur = 5, cClicks = 0, cRunning = false, cDone = false, cInterval = null, cStart = 0, cBest = 0;
+        let cAllBest = parseFloat(localStorage.getItem('sl_cps_best') || '0');
+        const cPad = document.getElementById('cPad');
+        const cMain = document.getElementById('cMain');
+        const cSub = document.getElementById('cSub');
+        const cTier = document.getElementById('cTier');
+        const cTimer = document.getElementById('cTimer');
+        const cBar = document.getElementById('cBar');
+        const cBestEl = document.getElementById('cBest');
+        const cAllBestEl = document.getElementById('cAllBest');
+        if (cAllBest > 0) cAllBestEl.textContent = cAllBest.toFixed(1) + ' CPS';
+
+        function cpsRank(cps) {
+          if (cps >= 12) return 'Butterfly / Jitter Tier (12+ CPS)';
+          if (cps >= 8.5) return 'Fast Competitive Clicker';
+          if (cps >= 6) return 'Standard Human Pace';
+          return 'Warmup Pace';
+        }
+
+        function resetCps() {
+          clearInterval(cInterval);
+          cClicks = 0; cRunning = false; cDone = false;
+          cTimer.textContent = cDur.toFixed(1) + 's';
+          cBar.style.width = '100%';
+          cTier.textContent = 'Ready';
+          cMain.textContent = 'Click Here to Start';
+          cSub.textContent = 'Clicks: 0 | Live Pace: 0.0 CPS';
+        }
+
+        cPad.addEventListener('pointerdown', (e) => {
+          e.preventDefault();
+          const rect = cPad.getBoundingClientRect();
+          const rip = document.createElement('span');
+          rip.className = 'cps-ripple';
+          rip.style.left = (e.clientX - rect.left - 36) + 'px';
+          rip.style.top = (e.clientY - rect.top - 36) + 'px';
+          cPad.appendChild(rip);
+          setTimeout(() => rip.remove(), 460);
+
+          if (cDone) return;
+          if (!cRunning) {
+            cRunning = true;
+            cStart = performance.now();
+            cInterval = setInterval(() => {
+              const el = (performance.now() - cStart) / 1000;
+              const rem = Math.max(0, cDur - el);
+              cTimer.textContent = rem.toFixed(1) + 's';
+              cBar.style.width = ((rem / cDur) * 100) + '%';
+              if (el >= cDur) {
+                clearInterval(cInterval);
+                cDone = true;
+                cBar.style.width = '0%';
+                const finalCps = (cClicks / cDur);
+                if (finalCps > cBest) { cBest = finalCps; cBestEl.textContent = cBest.toFixed(1) + ' CPS'; }
+                if (finalCps > cAllBest) {
+                  cAllBest = finalCps;
+                  localStorage.setItem('sl_cps_best', cAllBest.toFixed(1));
+                  cAllBestEl.textContent = cAllBest.toFixed(1) + ' CPS';
+                }
+                cTier.textContent = cpsRank(finalCps);
+                cMain.textContent = finalCps.toFixed(1) + ' CPS';
+                cSub.textContent = cClicks + ' clicks in ' + cDur + 's — Click Reset CPS to try again';
+              }
+            }, 40);
+          }
+          cClicks++;
+          const elapsed = Math.max(0.1, (performance.now() - cStart) / 1000);
+          cTier.textContent = 'Clicking...';
+          cMain.textContent = cClicks + ' Clicks';
+          cSub.textContent = 'Live Pace: ' + (cClicks / elapsed).toFixed(1) + ' CPS';
+        });
+
+        document.querySelectorAll('.c-sec').forEach(b => b.addEventListener('click', () => {
+          cDur = parseInt(b.dataset.csec, 10);
+          document.querySelectorAll('.c-sec').forEach(x => x.className = parseInt(x.dataset.csec, 10) === cDur ? 'c-sec px-3 py-1.5 rounded-lg bg-amber-600 text-white font-semibold' : 'c-sec px-3 py-1.5 rounded-lg bg-slate-800 text-slate-200 border border-slate-700 font-semibold');
+          resetCps();
+        }));
+        document.getElementById('cReset').addEventListener('click', resetCps);
+
+        const hzBox = document.getElementById('hzBox');
+        const hzNow = document.getElementById('hzNow');
+        const hzPeakEl = document.getElementById('hzPeak');
+        const hzBadge = document.getElementById('hzBadge');
+        const hzBars = document.getElementById('hzBars');
+        const hzDot = document.getElementById('hzDot');
+        let lastMove = 0, deltas = [], peakHz = 0, history = [];
+
+        hzBox.addEventListener('pointermove', (e) => {
+          const rect = hzBox.getBoundingClientRect();
+          hzDot.classList.remove('hidden');
+          hzDot.style.left = (e.clientX - rect.left) + 'px';
+          hzDot.style.top = (e.clientY - rect.top) + 'px';
+
+          const events = e.getCoalescedEvents ? e.getCoalescedEvents() : [e];
+          for (const ev of events) {
+            if (lastMove > 0) {
+              const dt = ev.timeStamp - lastMove;
+              if (dt > 0.1 && dt < 50) {
+                deltas.push(dt);
+                if (deltas.length > 35) deltas.shift();
+                const avgDt = deltas.reduce((a, b) => a + b, 0) / deltas.length;
+                const hz = Math.round(1000 / avgDt);
+                if (hz > peakHz && hz <= 8000) peakHz = hz;
+                hzNow.textContent = hz + ' Hz';
+                hzPeakEl.textContent = 'Peak: ' + peakHz + ' Hz | Interval: ' + avgDt.toFixed(2) + ' ms';
+                hzBadge.textContent = peakHz >= 900 ? '1000Hz+ Gaming Tier' : (peakHz >= 450 ? '500Hz Tier' : '125Hz Office / Trackpad');
+                history.push(hz);
+                if (history.length > 24) history.shift();
+                const maxScale = Math.max(1000, peakHz);
+                hzBars.innerHTML = history.map(v => '<span class="w-1.5 rounded-t bg-emerald-400/80" style="height:' + Math.max(12, Math.min(100, Math.round((v / maxScale) * 100))) + '%"></span>').join('');
+              }
+            }
+            lastMove = ev.timeStamp;
+          }
+        });
+      })();
+    </script>
+  </main>
+  <footer class="border-t border-slate-800/80 py-10 text-xs text-slate-400 mt-16 bg-[#070a12]">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 grid sm:grid-cols-4 gap-8">
+      <div>
+        <div class="font-bold text-white text-sm mb-2">SkewLux.dev</div>
+        <p class="leading-relaxed text-slate-400">Zero-latency browser benchmarks for visual reaction time, 100-word WPM typing speed, cross-game sensitivity, and USB mouse polling rates.</p>
+      </div>
+      <div>
+        <div class="font-semibold text-slate-200 mb-2">Daily Speed Benchmarks</div>
+        <ul class="space-y-1.5">
+          <li><a href="/" class="hover:text-white">Visual Reaction Time Test</a></li>
+          <li><a href="/typing-test" class="hover:text-white">Typing Speed &amp; Code WPM Test</a></li>
+          <li><a href="/100-words-typing-test" class="hover:text-white">100 Words Typing Test</a></li>
+          <li><a href="/viral-typing-challenge" class="hover:text-white">Viral Typing Challenge</a></li>
+          <li><a href="/cps-test" class="hover:text-white">CPS Click Speed Test</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="font-semibold text-slate-200 mb-2">Gaming &amp; Hardware Tools</div>
+        <ul class="space-y-1.5">
+          <li><a href="/sensitivity-converter" class="hover:text-white">Game Sensitivity Converter</a></li>
+          <li><a href="/edpi-calculator" class="hover:text-white">eDPI &amp; cm/360° Calculator</a></li>
+          <li><a href="/valorant-to-cs2-sensitivity" class="hover:text-white">Valorant to CS2 Sensitivity</a></li>
+          <li><a href="/mouse-polling-rate-test" class="hover:text-white">Mouse Polling Rate (Hz) Test</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="font-semibold text-slate-200 mb-2">Guides &amp; Policies</div>
+        <ul class="space-y-1.5">
+          <li><a href="/guides/human-reaction-time-science" class="hover:text-white">Reaction Time &amp; Hz Guide</a></li>
+          <li><a href="/guides/typing-speed-wpm-accuracy" class="hover:text-white">100+ WPM Typing Guide</a></li>
+          <li><a href="/about" class="hover:text-white">About</a> &middot; <a href="/contact" class="hover:text-white">Contact</a></li>
+          <li><a href="/privacy" class="hover:text-white">Privacy</a> &middot; <a href="/terms" class="hover:text-white">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

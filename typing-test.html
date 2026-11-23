@@ -3,18 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Typing Speed Test (WPM) — English, Code &amp; Number Pad | SkewLux.dev</title>
-  <meta name="description" content="Measure your typing speed in WPM and accuracy across 15s, 30s, and 60s tests with English words, JS/Python code, and number modes." />
+  <title>Typing Speed Test (WPM) — 100 Words, Viral Texts &amp; Code | SkewLux.dev</title>
+  <meta name="description" content="Test your typing speed in WPM with the Top 100 English words, viral 100-word speed challenges, JS/Python code, and 15s/30s/60s timers." />
   <meta name="robots" content="index, follow, max-image-preview:large" />
   <link rel="canonical" href="https://skewlux.dev/typing-test" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Typing Speed Test (WPM) — English, Code &amp; Number Pad | SkewLux.dev" />
-  <meta property="og:description" content="Measure your typing speed in WPM and accuracy across 15s, 30s, and 60s tests with English words, JS/Python code, and number modes." />
+  <meta property="og:title" content="Typing Speed Test (WPM) — 100 Words, Viral Texts &amp; Code | SkewLux.dev" />
+  <meta property="og:description" content="Test your typing speed in WPM with the Top 100 English words, viral 100-word speed challenges, JS/Python code, and 15s/30s/60s timers." />
   <meta property="og:url" content="https://skewlux.dev/typing-test" />
   <meta name="google-adsense-account" content="ca-pub-4317028384309274" />
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4317028384309274" crossorigin="anonymous"></script>
   <script src="https://cdn.tailwindcss.com"></script>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Typing Speed &amp; Code WPM Test","url":"https://skewlux.dev/typing-test","applicationCategory":"UtilitiesApplication","operatingSystem":"Web Browser","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Typing Speed &amp; 100-Word WPM Test","url":"https://skewlux.dev/typing-test","applicationCategory":"UtilitiesApplication","operatingSystem":"Web Browser","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
 </head>
 <body class="bg-[#090d16] text-slate-100 min-h-screen flex flex-col font-sans antialiased selection:bg-emerald-500/30">
   <header class="border-b border-slate-800/80 bg-[#090d16]/95 backdrop-blur sticky top-0 z-40">
@@ -28,6 +28,7 @@
       <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-300">
         <a href="/" class="hover:text-white transition">Reaction Test</a>
         <a href="/typing-test" class="hover:text-white transition">Typing Speed</a>
+        <a href="/100-words-typing-test" class="hover:text-white transition">100 Words Test</a>
         <a href="/sensitivity-converter" class="hover:text-white transition">Sens Converter</a>
         <a href="/cps-polling-test" class="hover:text-white transition">CPS &amp; Hz Test</a>
         <a href="/guides/human-reaction-time-science" class="text-emerald-400 hover:text-emerald-300 transition">Guides</a>
@@ -36,6 +37,7 @@
     <nav class="md:hidden flex items-center gap-4 overflow-x-auto px-4 py-2.5 border-t border-slate-800/70 text-xs font-medium text-slate-300 whitespace-nowrap bg-[#070a12]">
       <a href="/" class="hover:text-white">Reaction</a>
       <a href="/typing-test" class="hover:text-white">Typing WPM</a>
+      <a href="/100-words-typing-test" class="hover:text-white">100 Words</a>
       <a href="/sensitivity-converter" class="hover:text-white">Sens Converter</a>
       <a href="/cps-polling-test" class="hover:text-white">CPS &amp; Hz</a>
       <a href="/guides/human-reaction-time-science" class="text-emerald-400">Guides</a>
@@ -44,12 +46,13 @@
   <main class="flex-1 max-w-6xl w-full mx-auto px-4 sm:px-6 py-8 sm:py-10">
     <section class="mb-6 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
       <div>
-        <span class="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-indigo-500/15 text-indigo-300 border border-indigo-500/30 mb-2">Keyboard Speed &amp; Accuracy Lab</span>
-        <h1 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">Typing Speed &amp; Code WPM Test</h1>
-        <p class="text-slate-300 text-sm sm:text-base mt-2 max-w-2xl">Benchmark your net words-per-minute (WPM) and keystroke accuracy with clean line wrapping and instant keyboard feedback.</p>
+        <span class="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-indigo-500/15 text-indigo-300 border border-indigo-500/30 mb-2">100-Word Speed &amp; Viral Challenge Lab</span>
+        <h1 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">Typing Speed &amp; 100-Word WPM Test</h1>
+        <p class="text-slate-300 text-sm sm:text-base mt-2 max-w-2xl">Race through the top 100 most-searched English words, viral 100-word challenges, or timed WPM sprints with instant accuracy tracking.</p>
       </div>
       <div class="flex flex-wrap gap-2.5 text-xs">
-        <div class="px-3.5 py-2 rounded-xl bg-slate-900 border border-slate-800"><span class="text-slate-400 block">Time</span><strong id="tpTime" class="text-amber-400 text-lg font-mono">30s</strong></div>
+        <div class="px-3.5 py-2 rounded-xl bg-slate-900 border border-slate-800"><span id="tpTimerLbl" class="text-slate-400 block">Time</span><strong id="tpTime" class="text-amber-400 text-lg font-mono">30s</strong></div>
+        <div class="px-3.5 py-2 rounded-xl bg-slate-900 border border-slate-800"><span class="text-slate-400 block">Progress</span><strong id="tpProg" class="text-sky-400 text-lg font-mono">0/100</strong></div>
         <div class="px-3.5 py-2 rounded-xl bg-slate-900 border border-slate-800"><span class="text-slate-400 block">Live WPM</span><strong id="tpWpm" class="text-emerald-400 text-lg font-mono">0</strong></div>
         <div class="px-3.5 py-2 rounded-xl bg-slate-900 border border-slate-800"><span class="text-slate-400 block">Accuracy</span><strong id="tpAcc" class="text-indigo-400 text-lg font-mono">100%</strong></div>
         <div class="px-3.5 py-2 rounded-xl bg-slate-900 border border-slate-800"><span class="text-slate-400 block">Best WPM</span><strong id="tpBest" class="text-white text-lg font-mono">--</strong></div>
@@ -59,60 +62,115 @@
     <section class="bg-slate-900/75 border border-slate-800 rounded-2xl p-5 sm:p-6 mb-12 space-y-5">
       <div class="flex flex-wrap items-center justify-between gap-3">
         <div class="flex flex-wrap items-center gap-2 text-xs">
-          <button data-sec="15" class="tp-sec px-3 py-1.5 rounded-lg bg-slate-800 text-slate-200 border border-slate-700 font-semibold">15s</button>
-          <button data-sec="30" class="tp-sec px-3 py-1.5 rounded-lg bg-slate-800 text-slate-200 border border-slate-700 font-semibold">30s</button>
-          <button data-sec="60" class="tp-sec px-3 py-1.5 rounded-lg bg-slate-800 text-slate-200 border border-slate-700 font-semibold">60s</button>
+          <button data-test="100w" class="tp-test px-3 py-1.5 rounded-lg bg-slate-800 text-slate-200 border border-slate-700 font-semibold">100 Words Race</button>
+          <button data-test="15s" class="tp-test px-3 py-1.5 rounded-lg bg-slate-800 text-slate-200 border border-slate-700 font-semibold">15s</button>
+          <button data-test="30s" class="tp-test px-3 py-1.5 rounded-lg bg-slate-800 text-slate-200 border border-slate-700 font-semibold">30s</button>
+          <button data-test="60s" class="tp-test px-3 py-1.5 rounded-lg bg-slate-800 text-slate-200 border border-slate-700 font-semibold">60s</button>
           <span class="border-l border-slate-700 h-5 mx-1"></span>
-          <button data-mode="words" class="tp-mode px-3 py-1.5 rounded-lg bg-slate-800 text-slate-200 border border-slate-700 font-semibold">English Words</button>
+          <button data-mode="top100" class="tp-mode px-3 py-1.5 rounded-lg bg-slate-800 text-slate-200 border border-slate-700 font-semibold">Top 100 Words</button>
+          <button data-mode="viral" class="tp-mode px-3 py-1.5 rounded-lg bg-slate-800 text-slate-200 border border-slate-700 font-semibold">Viral 100-Word Texts</button>
           <button data-mode="code" class="tp-mode px-3 py-1.5 rounded-lg bg-slate-800 text-slate-200 border border-slate-700 font-semibold">JS / Python Code</button>
-          <button data-mode="numbers" class="tp-mode px-3 py-1.5 rounded-lg bg-slate-800 text-slate-200 border border-slate-700 font-semibold">Numbers &amp; Symbols</button>
+          <button data-mode="numbers" class="tp-mode px-3 py-1.5 rounded-lg bg-slate-800 text-slate-200 border border-slate-700 font-semibold">Numbers &amp; Hz</button>
         </div>
         <div class="flex items-center gap-3">
           <label class="inline-flex items-center gap-1.5 text-xs text-slate-400 cursor-pointer select-none">
             <input id="tpSound" type="checkbox" checked class="accent-indigo-500 rounded" />
             <span>Key Click</span>
           </label>
-          <button id="tpRestart" type="button" class="px-4 py-1.5 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-semibold">Restart (Tab)</button>
+          <button id="tpRestart" type="button" class="px-4 py-1.5 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-semibold">New Text (Tab)</button>
         </div>
       </div>
 
       <div id="tpArena" class="relative p-5 sm:p-6 rounded-2xl bg-[#060911] border-2 border-slate-800 focus-within:border-indigo-500/60 cursor-text transition-colors">
-        <div id="tpFocusHint" class="text-[11px] uppercase tracking-wider text-indigo-400 font-semibold mb-3">Click here and start typing — timer starts on your first keystroke</div>
-        <div id="tpPrompt" class="font-mono text-lg sm:text-2xl leading-relaxed flex flex-wrap gap-x-3 gap-y-2 select-none"></div>
+        <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+          <div id="tpFocusHint" class="text-[11px] uppercase tracking-wider text-indigo-400 font-semibold">Click here and start typing — timer starts on your first keystroke</div>
+          <div id="tpPassageBadge" class="text-[11px] text-emerald-400 font-semibold">100-Word Benchmark</div>
+        </div>
+        <div id="tpPrompt" class="font-mono text-base sm:text-xl leading-relaxed flex flex-wrap gap-x-2.5 gap-y-1.5 select-none"></div>
         <input id="tpInput" type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" aria-label="Typing input" class="opacity-0 absolute inset-0 w-full h-full cursor-text" />
       </div>
 
       <div id="tpResult" class="hidden p-5 rounded-2xl bg-gradient-to-r from-emerald-950/80 to-slate-900 border border-emerald-500/40 flex flex-wrap items-center justify-between gap-4"></div>
     </section>
 
+    <section class="mb-12">
+      <h2 class="text-lg font-bold text-white mb-3">Popular Daily Typing Challenges</h2>
+      <div class="flex flex-wrap gap-2 text-xs">
+        <a href="/100-words-typing-test" class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 hover:border-indigo-500/50 text-slate-300">100 Words Typing Test</a>
+        <a href="/viral-typing-challenge" class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 hover:border-emerald-500/50 text-slate-300">Viral 100-Word Challenge</a>
+        <a href="/15-second-typing-test" class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 hover:border-indigo-500/50 text-slate-300">15 Second Sprint</a>
+        <a href="/30-second-typing-test" class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 hover:border-indigo-500/50 text-slate-300">30 Second Test</a>
+        <a href="/60-second-typing-test" class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 hover:border-indigo-500/50 text-slate-300">60 Second (1 Min) Test</a>
+        <a href="/code-typing-test" class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 hover:border-indigo-500/50 text-slate-300">Programmer Code WPM</a>
+        <a href="/number-pad-typing-test" class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 hover:border-indigo-500/50 text-slate-300">Numbers &amp; Symbols</a>
+      </div>
+    </section>
+
     <article class="max-w-4xl space-y-6 text-slate-300 leading-relaxed">
-      <h2 class="text-2xl font-bold text-white">How Net WPM and Accuracy Are Calculated</h2><p>Standard typing benchmarks define one word as <strong>5 keystrokes</strong> (including spaces). Net WPM divides your correctly typed characters by 5 and normalizes by elapsed minutes, penalizing uncorrected typos automatically so sloppy bursts cannot inflate your score.</p>
+          <section>
+      <h2 class="text-2xl font-bold text-white mb-3">Why the Top 100 Most-Searched Words &amp; 100-Word Sprints Measure True Speed</h2>
+      <p>The top 100 English words account for over <strong>50% of all everyday written text</strong>, emails, and chat messages. Practicing 100-word sprints trains your fingers to execute high-frequency bigrams and trigrams automatically without conscious thought, while viral 100-word passages test punctuation, capitalization, and sustained rhythm under pressure.</p>
+    </section>
+    <section>
+      <h2 class="text-2xl font-bold text-white mb-3">WPM Speed Tiers &amp; Percentile Benchmarks</h2>
+      <p><strong>40–55 WPM:</strong> Average everyday computer user. <strong>65–85 WPM:</strong> Fast office and developer benchmark. <strong>95–120+ WPM:</strong> Top 3% competitive touch-typist tier. Net WPM divides correctly typed characters by 5 and normalizes by elapsed minutes.</p>
+    </section>
     </article>
 
     <script>
       (function() {
-        const banks = {
-          words: "the quick brown fox jumps over lazy dog system network latency browser frame keyboard speed accuracy rhythm focus steady flow practice modern cloud server packet route signal client render pixel buffer memory cache thread async await promise function return value const let array object string number boolean index query state design clean fast build scale deploy",
-          code: "const fetchMetrics = async (url) => { const res = await fetch(url); if (!res.ok) throw new Error('HTTP_' + res.status); return await res.json(); }; function clamp(val, min, max) { return Math.min(max, Math.max(min, val)); } for (let i = 0; i < items.length; i++) { total += items[i].score; }",
-          numbers: "1024 4096 8192 144Hz 240Hz 360Hz 1920x1080 3840x2160 127.0.0.1 192.168.1.1 8080 443 99.95% 0.022 0.070 800dpi 1600dpi 45.5cm 2026 3.14159 65535 1000Hz 256bit 512MB 16GB"
-        };
-        let duration = 30;
-        let mode = 'words';
+        const top100Words = [
+          "the","be","to","of","and","a","in","that","have","I","it","for","not","on","with","he","as","you","do","at",
+          "this","but","his","by","from","they","we","say","her","she","or","an","will","my","one","all","would","there","their","what",
+          "so","up","out","if","about","who","get","which","go","me","when","make","can","like","time","no","just","him","know","take",
+          "people","into","year","your","good","some","could","them","see","other","than","then","now","look","only","come","its","over","think","also",
+          "back","after","use","two","how","our","work","first","well","way","even","new","want","because","any","these","give","day","most","us"
+        ];
+
+        const viralPassages = [
+          {
+            label: "Viral Challenge #1 — The 1% Focus & Speed Manifesto (100 Words)",
+            text: "Every single day millions of people open a browser tab hoping to sharpen their focus and measure true digital speed. Real typing mastery is never about slamming keys in panic when a difficult word appears on screen. Instead, elite typists read one full word ahead of the active cursor, keeping wrists relaxed and letting muscle memory glide smoothly through common English patterns. When you eliminate backspaces and hold ninety-eight percent accuracy, your words per minute climb effortlessly past ninety, one hundred, and beyond. Stay calm, keep your rhythm steady, and finish all one hundred words cleanly."
+          },
+          {
+            label: "Viral Challenge #2 — Esports Reflex & Low-Latency Setup (100 Words)",
+            text: "Competitive gaming performance comes down to milliseconds, clean muscle memory, and zero wasted motion across your mousepad. Whether you are holding an angle in Valorant, counter-strafing in Counter-Strike, or tracking a fast target in Apex Legends, consistent physical turn distance matters far more than copying a random sensitivity setting. Pair a lightweight thousand-hertz gaming mouse with a high refresh rate display, disable background clutter, and warm up your fingers before every ranked session. Five minutes of focused reflex and typing drills each morning builds sharp hand-eye coordination that transfers directly into clutch rounds."
+          },
+          {
+            label: "Viral Challenge #3 — Modern Software Engineering Flow (100 Words)",
+            text: "Great software products feel instantaneous because every network request, layout transition, and keyboard shortcut responds without hesitation. Developers who master touch typing spend less energy hunting for brackets, semicolons, and variable names, freeing their minds to solve real architectural problems. Clean code is written in calm, deliberate bursts rather than frantic edits. Test your edge cases early, keep dependencies lightweight, measure real browser performance instead of guessing, and ship simple tools that people genuinely enjoy using every single day. Precision and consistency always beat brute force over the long run."
+          },
+          {
+            label: "Viral Challenge #4 — Daily Habit & Deep Work Sprint (100 Words)",
+            text: "Small daily habits compound faster than rare bursts of extreme motivation. Spending just ten focused minutes practicing deliberate speed and accuracy rewires finger pathways far more effectively than an exhausted two-hour marathon once a month. Close extra browser tabs, silence phone notifications, sit upright with both feet planted flat, and treat every single keystroke as intentional. Notice how your breathing slows down once you stop rushing and start trusting your rhythm. Beat your personal best today, share your score challenge with a friend, and come back tomorrow to push the bar higher."
+          }
+        ];
+
+        const codeTokens = "const fetchMetrics = async (url) => { const res = await fetch(url); if (!res.ok) throw new Error('HTTP_' + res.status); return await res.json(); }; function clamp(val, min, max) { return Math.min(max, Math.max(min, val)); } for (let i = 0; i < items.length; i++) { total += items[i].score; }".split(' ');
+        const numTokens = "100 1024 4096 8192 144Hz 240Hz 360Hz 1920x1080 3840x2160 127.0.0.1 8080 443 99.95% 0.022 0.070 800dpi 1600dpi 45.5cm 2026 3.14159 65535 1000Hz 256bit 512MB 16GB".split(' ');
+
+        let testType = '100w'; // 100w | 15s | 30s | 60s
+        let mode = 'top100';     // top100 | viral | code | numbers
+        let viralIdx = 0;
         let targetWords = [];
         let targetText = '';
         let started = false;
         let finished = false;
         let interval = null;
+        let t0 = 0;
         let bestWpm = parseInt(localStorage.getItem('sl_tp_best') || '0', 10);
 
         const promptEl = document.getElementById('tpPrompt');
         const inputEl = document.getElementById('tpInput');
         const timeEl = document.getElementById('tpTime');
+        const timerLblEl = document.getElementById('tpTimerLbl');
+        const progEl = document.getElementById('tpProg');
         const wpmEl = document.getElementById('tpWpm');
         const accEl = document.getElementById('tpAcc');
         const bestEl = document.getElementById('tpBest');
         const resEl = document.getElementById('tpResult');
         const hintEl = document.getElementById('tpFocusHint');
+        const badgeEl = document.getElementById('tpPassageBadge');
         const soundChk = document.getElementById('tpSound');
 
         if (bestWpm > 0) bestEl.textContent = bestWpm;
@@ -133,10 +191,10 @@
         }
 
         function highlightButtons() {
-          document.querySelectorAll('.tp-sec').forEach(b => {
-            b.className = parseInt(b.dataset.sec, 10) === duration
-              ? 'tp-sec px-3 py-1.5 rounded-lg bg-emerald-600 text-white font-semibold'
-              : 'tp-sec px-3 py-1.5 rounded-lg bg-slate-800 text-slate-200 border border-slate-700 font-semibold';
+          document.querySelectorAll('.tp-test').forEach(b => {
+            b.className = b.dataset.test === testType
+              ? 'tp-test px-3 py-1.5 rounded-lg bg-emerald-600 text-white font-semibold'
+              : 'tp-test px-3 py-1.5 rounded-lg bg-slate-800 text-slate-200 border border-slate-700 font-semibold';
           });
           document.querySelectorAll('.tp-mode').forEach(b => {
             b.className = b.dataset.mode === mode
@@ -146,10 +204,24 @@
         }
 
         function generateText() {
-          const pool = banks[mode].split(' ');
-          targetWords = [];
-          for (let i = 0; i < 42; i++) {
-            targetWords.push(pool[Math.floor(Math.random() * pool.length)]);
+          const wordGoal = testType === '100w' ? 100 : 120;
+          if (mode === 'viral') {
+            const item = viralPassages[viralIdx % viralPassages.length];
+            viralIdx++;
+            badgeEl.textContent = item.label;
+            let words = item.text.split(' ');
+            if (testType !== '100w') {
+              const second = viralPassages[viralIdx % viralPassages.length].text.split(' ');
+              words = words.concat(second);
+            }
+            targetWords = words.slice(0, wordGoal);
+          } else {
+            const pool = mode === 'top100' ? top100Words : (mode === 'code' ? codeTokens : numTokens);
+            badgeEl.textContent = mode === 'top100' ? 'Top 100 Most-Searched English Words' : (mode === 'code' ? 'Developer Code Syntax Mode' : 'Numbers & Refresh Rates');
+            targetWords = [];
+            for (let i = 0; i < wordGoal; i++) {
+              targetWords.push(pool[Math.floor(Math.random() * pool.length)]);
+            }
           }
           targetText = targetWords.join(' ');
         }
@@ -160,6 +232,9 @@
 
         function renderPrompt() {
           const typed = inputEl.value;
+          const completedWords = typed.length ? typed.trim().split(/\s+/).length : 0;
+          progEl.textContent = Math.min(targetWords.length, completedWords) + '/' + targetWords.length;
+
           let globalIdx = 0;
           let html = '';
           for (let w = 0; w < targetWords.length; w++) {
@@ -174,13 +249,12 @@
                   wordHtml += '<span class="bg-rose-500/40 text-rose-200 rounded px-0.5">' + ch + '</span>';
                 }
               } else if (globalIdx === typed.length) {
-                wordHtml += '<span class="border-l-2 border-emerald-400 text-white bg-indigo-500/15">' + ch + '</span>';
+                wordHtml += '<span class="border-l-2 border-emerald-400 text-white bg-indigo-500/20">' + ch + '</span>';
               } else {
                 wordHtml += '<span class="text-slate-500">' + ch + '</span>';
               }
               globalIdx++;
             }
-            // Account for space after word
             if (w < targetWords.length - 1) {
               if (globalIdx === typed.length) {
                 wordHtml += '<span class="border-l-2 border-emerald-400">&nbsp;</span>';
@@ -198,7 +272,13 @@
           clearInterval(interval);
           started = false;
           finished = false;
-          timeEl.textContent = duration + 's';
+          if (testType === '100w') {
+            timerLblEl.textContent = 'Elapsed';
+            timeEl.textContent = '0.0s';
+          } else {
+            timerLblEl.textContent = 'Time';
+            timeEl.textContent = testType;
+          }
           wpmEl.textContent = '0';
           accEl.textContent = '100%';
           inputEl.value = '';
@@ -210,7 +290,7 @@
           highlightButtons();
         }
 
-        function finish() {
+        function finish(elapsedSec) {
           finished = true;
           clearInterval(interval);
           inputEl.disabled = true;
@@ -219,7 +299,7 @@
           for (let i = 0; i < typed.length; i++) {
             if (typed[i] === targetText[i]) correct++; else errors++;
           }
-          const mins = duration / 60;
+          const mins = Math.max(0.02, elapsedSec / 60);
           const netWpm = Math.round((correct / 5) / mins);
           const rawWpm = Math.round((typed.length / 5) / mins);
           const acc = typed.length ? Math.round((correct / typed.length) * 100) : 100;
@@ -230,10 +310,10 @@
             localStorage.setItem('sl_tp_best', String(bestWpm));
             bestEl.textContent = bestWpm;
           }
-          resEl.innerHTML = '<div class="space-y-1"><div class="text-base font-bold text-white">Result: <span class="text-emerald-400">' + netWpm + ' Net WPM</span> &middot; ' + acc + '% Accuracy</div><div class="text-xs text-slate-300">Raw Speed: ' + rawWpm + ' WPM | Correct Chars: ' + correct + ' | Errors: ' + errors + '</div></div><button id="tpCopyRes" class="px-4 py-2 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-semibold">Copy Score</button>';
+          resEl.innerHTML = '<div class="space-y-1"><div class="text-base font-bold text-white">Completed in ' + elapsedSec.toFixed(1) + 's: <span class="text-emerald-400">' + netWpm + ' Net WPM</span> &middot; ' + acc + '% Accuracy</div><div class="text-xs text-slate-300">Raw Speed: ' + rawWpm + ' WPM | Correct Chars: ' + correct + ' | Errors: ' + errors + '</div></div><button id="tpCopyRes" class="px-4 py-2 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-semibold">Copy Challenge Score</button>';
           resEl.classList.remove('hidden');
           document.getElementById('tpCopyRes').addEventListener('click', function() {
-            navigator.clipboard.writeText('SkewLux.dev Typing Speed: ' + netWpm + ' WPM (' + acc + '% accuracy) — https://skewlux.dev/typing-test');
+            navigator.clipboard.writeText('SkewLux.dev 100-Word Typing Score: ' + netWpm + ' WPM (' + acc + '% accuracy in ' + elapsedSec.toFixed(1) + 's) — Can you beat me? https://skewlux.dev/100-words-typing-test');
             this.textContent = 'Copied!';
           });
         }
@@ -244,32 +324,38 @@
           if (!started) {
             started = true;
             hintEl.textContent = 'Typing live... keep your rhythm steady!';
-            const t0 = performance.now();
+            t0 = performance.now();
             interval = setInterval(() => {
               const elapsed = (performance.now() - t0) / 1000;
-              const rem = Math.max(0, Math.ceil(duration - elapsed));
-              timeEl.textContent = rem + 's';
               const typed = inputEl.value;
               let correct = 0;
               for (let i = 0; i < typed.length; i++) if (typed[i] === targetText[i]) correct++;
-              const curMins = Math.max(0.05, elapsed / 60);
+              const curMins = Math.max(0.04, elapsed / 60);
               wpmEl.textContent = Math.round((correct / 5) / curMins);
               accEl.textContent = (typed.length ? Math.round((correct / typed.length) * 100) : 100) + '%';
-              if (elapsed >= duration) finish();
-            }, 100);
-          }
-          if (inputEl.value.length >= targetText.length - 10) {
-            generateText();
-            inputEl.value = '';
+
+              if (testType === '100w') {
+                timeEl.textContent = elapsed.toFixed(1) + 's';
+              } else {
+                const dur = parseInt(testType, 10);
+                const rem = Math.max(0, Math.ceil(dur - elapsed));
+                timeEl.textContent = rem + 's';
+                if (elapsed >= dur) finish(dur);
+              }
+            }, 80);
           }
           renderPrompt();
+          if (inputEl.value.length >= targetText.length) {
+            const elapsed = (performance.now() - t0) / 1000;
+            finish(elapsed);
+          }
         });
 
         inputEl.addEventListener('keydown', (e) => {
           if (e.key === 'Tab') { e.preventDefault(); reset(); }
         });
 
-        document.querySelectorAll('.tp-sec').forEach(b => b.addEventListener('click', () => { duration = parseInt(b.dataset.sec, 10); reset(); inputEl.focus(); }));
+        document.querySelectorAll('.tp-test').forEach(b => b.addEventListener('click', () => { testType = b.dataset.test; reset(); inputEl.focus(); }));
         document.querySelectorAll('.tp-mode').forEach(b => b.addEventListener('click', () => { mode = b.dataset.mode; reset(); inputEl.focus(); }));
         document.getElementById('tpRestart').addEventListener('click', () => { reset(); inputEl.focus(); });
         reset();
@@ -280,31 +366,32 @@
     <div class="max-w-6xl mx-auto px-4 sm:px-6 grid sm:grid-cols-4 gap-8">
       <div>
         <div class="font-bold text-white text-sm mb-2">SkewLux.dev</div>
-        <p class="leading-relaxed text-slate-400">Zero-latency browser benchmarks for visual reaction time, WPM typing speed, cross-game sensitivity, and USB mouse polling rates.</p>
+        <p class="leading-relaxed text-slate-400">Zero-latency browser benchmarks for visual reaction time, 100-word WPM typing speed, cross-game sensitivity, and USB mouse polling rates.</p>
       </div>
       <div>
-        <div class="font-semibold text-slate-200 mb-2">Interactive Benchmarks</div>
+        <div class="font-semibold text-slate-200 mb-2">Daily Speed Benchmarks</div>
         <ul class="space-y-1.5">
           <li><a href="/" class="hover:text-white">Visual Reaction Time Test</a></li>
-          <li><a href="/typing-test" class="hover:text-white">WPM &amp; Code Typing Test</a></li>
-          <li><a href="/sensitivity-converter" class="hover:text-white">Game Sensitivity Converter</a></li>
-          <li><a href="/cps-polling-test" class="hover:text-white">CPS &amp; Mouse Polling Rate Test</a></li>
+          <li><a href="/typing-test" class="hover:text-white">Typing Speed &amp; Code WPM Test</a></li>
+          <li><a href="/100-words-typing-test" class="hover:text-white">100 Words Typing Test</a></li>
+          <li><a href="/viral-typing-challenge" class="hover:text-white">Viral Typing Challenge</a></li>
+          <li><a href="/cps-test" class="hover:text-white">CPS Click Speed Test</a></li>
         </ul>
       </div>
       <div>
-        <div class="font-semibold text-slate-200 mb-2">Popular Converters</div>
+        <div class="font-semibold text-slate-200 mb-2">Gaming &amp; Hardware Tools</div>
         <ul class="space-y-1.5">
+          <li><a href="/sensitivity-converter" class="hover:text-white">Game Sensitivity Converter</a></li>
+          <li><a href="/edpi-calculator" class="hover:text-white">eDPI &amp; cm/360° Calculator</a></li>
           <li><a href="/valorant-to-cs2-sensitivity" class="hover:text-white">Valorant to CS2 Sensitivity</a></li>
-          <li><a href="/cs2-to-valorant-sensitivity" class="hover:text-white">CS2 to Valorant Sensitivity</a></li>
-          <li><a href="/valorant-to-apex-sensitivity" class="hover:text-white">Valorant to Apex Legends</a></li>
-          <li><a href="/60-second-typing-test" class="hover:text-white">60 Second Typing Test</a></li>
+          <li><a href="/mouse-polling-rate-test" class="hover:text-white">Mouse Polling Rate (Hz) Test</a></li>
         </ul>
       </div>
       <div>
         <div class="font-semibold text-slate-200 mb-2">Guides &amp; Policies</div>
         <ul class="space-y-1.5">
           <li><a href="/guides/human-reaction-time-science" class="hover:text-white">Reaction Time &amp; Hz Guide</a></li>
-          <li><a href="/guides/mouse-sensitivity-edpi-cm360" class="hover:text-white">eDPI &amp; cm/360° Guide</a></li>
+          <li><a href="/guides/typing-speed-wpm-accuracy" class="hover:text-white">100+ WPM Typing Guide</a></li>
           <li><a href="/about" class="hover:text-white">About</a> &middot; <a href="/contact" class="hover:text-white">Contact</a></li>
           <li><a href="/privacy" class="hover:text-white">Privacy</a> &middot; <a href="/terms" class="hover:text-white">Terms</a></li>
         </ul>
