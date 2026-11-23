@@ -4,17 +4,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mouse Sensitivity &amp; eDPI Converter (Valorant, CS2, Apex, Fortnite) | SkewLux.dev</title>
-  <meta name="description" content="Convert mouse sensitivity, eDPI, and physical cm/360° turn distance across Valorant, CS2, Apex Legends, Fortnite, Overwatch 2, and Warzone." />
+  <meta name="description" content="Convert mouse sensitivity, effective DPI (eDPI), and physical cm/360° turn distance across Valorant, CS2, Apex Legends, Fortnite, Overwatch 2, and Warzone." />
   <meta name="robots" content="index, follow, max-image-preview:large" />
   <link rel="canonical" href="https://skewlux.dev/sensitivity-converter" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Mouse Sensitivity &amp; eDPI Converter (Valorant, CS2, Apex, Fortnite) | SkewLux.dev" />
-  <meta property="og:description" content="Convert mouse sensitivity, eDPI, and physical cm/360° turn distance across Valorant, CS2, Apex Legends, Fortnite, Overwatch 2, and Warzone." />
+  <meta property="og:description" content="Convert mouse sensitivity, effective DPI (eDPI), and physical cm/360° turn distance across Valorant, CS2, Apex Legends, Fortnite, Overwatch 2, and Warzone." />
   <meta property="og:url" content="https://skewlux.dev/sensitivity-converter" />
   <meta name="google-adsense-account" content="ca-pub-4317028384309274" />
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4317028384309274" crossorigin="anonymous"></script>
   <script src="https://cdn.tailwindcss.com"></script>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Cross-Game Mouse Sensitivity &amp; eDPI Converter","url":"https://skewlux.dev/sensitivity-converter","applicationCategory":"UtilitiesApplication","operatingSystem":"Web Browser","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"SkewLux Cross-Game Mouse Sensitivity & eDPI Converter","url":"https://skewlux.dev/sensitivity-converter","applicationCategory":"UtilitiesApplication","operatingSystem":"Web Browser","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
 </head>
 <body class="bg-[#090d16] text-slate-100 min-h-screen flex flex-col font-sans antialiased selection:bg-emerald-500/30">
   <header class="border-b border-slate-800/80 bg-[#090d16]/95 backdrop-blur sticky top-0 z-40">
@@ -28,7 +28,7 @@
       <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-300">
         <a href="/" class="hover:text-white transition">Reaction Test</a>
         <a href="/typing-test" class="hover:text-white transition">Typing Speed</a>
-        <a href="/100-words-typing-test" class="hover:text-white transition">100 Words Test</a>
+        <a href="/100-words-typing-test" class="hover:text-white transition">100 Words</a>
         <a href="/sensitivity-converter" class="hover:text-white transition">Sens Converter</a>
         <a href="/cps-polling-test" class="hover:text-white transition">CPS &amp; Hz Test</a>
         <a href="/guides/human-reaction-time-science" class="text-emerald-400 hover:text-emerald-300 transition">Guides</a>
@@ -47,7 +47,7 @@
     <section class="mb-6">
       <span class="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-sky-500/15 text-sky-300 border border-sky-500/30 mb-2">FPS Aim &amp; 360° Distance Calculator</span>
       <h1 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">Cross-Game Mouse Sensitivity &amp; eDPI Converter</h1>
-      <p class="text-slate-300 text-sm sm:text-base mt-2 max-w-3xl">Keep identical 360-degree turn muscle memory across every competitive FPS using exact engine yaw ratios.</p>
+      <p class="text-slate-300 text-sm sm:text-base mt-2 max-w-3xl">Convert mouse sensitivity, effective DPI (eDPI), and physical cm/360° turn distance across Valorant, CS2, Apex Legends, Fortnite, Overwatch 2, Warzone, and Rainbow Six Siege.</p>
     </section>
 
     <section class="grid lg:grid-cols-12 gap-6 mb-12 bg-slate-900/75 border border-slate-800 rounded-2xl p-5 sm:p-6">
@@ -56,7 +56,7 @@
           <div class="sm:col-span-5">
             <label class="block text-xs font-semibold text-slate-300 mb-1.5">From Game</label>
             <select id="sFrom" class="w-full px-3 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-sm text-white">
-              <option value="valorant">Valorant</option>
+              <option value="valorant" selected>Valorant</option>
               <option value="cs2">Counter-Strike 2 (CS2)</option>
               <option value="apex">Apex Legends</option>
               <option value="fortnite">Fortnite (%)</option>
@@ -71,7 +71,7 @@
           <div class="sm:col-span-5">
             <label class="block text-xs font-semibold text-slate-300 mb-1.5">To Game</label>
             <select id="sTo" class="w-full px-3 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-sm text-white">
-              <option value="cs2">Counter-Strike 2 (CS2)</option>
+              <option value="cs2" selected>Counter-Strike 2 (CS2)</option>
               <option value="valorant">Valorant</option>
               <option value="apex">Apex Legends</option>
               <option value="fortnite">Fortnite (%)</option>
@@ -107,7 +107,7 @@
             <span id="sStyleTag" class="text-[11px] px-2 py-0.5 rounded bg-sky-500/15 text-sky-300 font-medium">Balanced Pro Range</span>
           </div>
           <div class="flex items-baseline justify-between mt-2">
-            <div id="sOutSens" class="text-4xl sm:text-5xl font-black text-white font-mono">1.114</div>
+            <div id="sOutSens" class="text-4xl sm:text-5xl font-black text-white font-mono">1.1136</div>
             <button id="sCopy" type="button" class="px-3.5 py-1.5 rounded-lg bg-sky-600 hover:bg-sky-500 text-white text-xs font-semibold">Copy Value</button>
           </div>
         </div>
@@ -130,35 +130,31 @@
       </div>
     </section>
 
-    <section class="mb-12">
-      <h2 class="text-lg font-bold text-white mb-3">Popular Sensitivity Converters</h2>
-      <div class="flex flex-wrap gap-2 text-xs">
-        <a href="/edpi-calculator" class="px-3 py-1.5 rounded-lg bg-slate-900 border border-sky-500/40 text-sky-300">eDPI Calculator</a>
-        <a href="/valorant-to-cs2-sensitivity" class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 hover:border-sky-500/50 text-slate-300">Valorant → CS2</a>
-        <a href="/cs2-to-valorant-sensitivity" class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 hover:border-sky-500/50 text-slate-300">CS2 → Valorant</a>
-        <a href="/valorant-to-apex-sensitivity" class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 hover:border-sky-500/50 text-slate-300">Valorant → Apex</a>
-        <a href="/apex-to-valorant-sensitivity" class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 hover:border-sky-500/50 text-slate-300">Apex → Valorant</a>
-        <a href="/valorant-to-fortnite-sensitivity" class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 hover:border-sky-500/50 text-slate-300">Valorant → Fortnite</a>
-        <a href="/cs2-to-apex-sensitivity" class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 hover:border-sky-500/50 text-slate-300">CS2 → Apex</a>
-        <a href="/overwatch2-to-valorant-sensitivity" class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 hover:border-sky-500/50 text-slate-300">Overwatch 2 → Valorant</a>
-        <a href="/warzone-to-valorant-sensitivity" class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 hover:border-sky-500/50 text-slate-300">Warzone → Valorant</a>
-      </div>
-    </section>
-
-    <article class="max-w-4xl space-y-6 text-slate-300 leading-relaxed">
-      <h2 class="text-2xl font-bold text-white">How True 360° Distance Sensitivity Conversion Works</h2><p>Different game engines map one mouse count (dot) to different camera rotation angles, known as the engine <strong>yaw value</strong> (for example, <code>0.07°</code> per count in Valorant versus <code>0.022°</code> in Counter-Strike 2 and Apex Legends). Multiplying your source sensitivity by the ratio <code>SourceYaw / TargetYaw</code> preserves your exact physical <strong>cm/360°</strong> desk swipe distance across every shooter.</p>
+    <article class="max-w-4xl space-y-8 text-slate-300 leading-relaxed">
+      <section>
+        <h2 class="text-2xl font-bold text-white mb-3">Engine Yaw Constants &amp; Pro FPS Sensitivity Reference Table</h2>
+        <p class="mb-4">Each game engine multiplies raw USB mouse counts by an internal yaw angle (degrees per count). Matching your physical <strong>cm/360°</strong> ensures identical wrist and arm flick distances across every shooter.</p>
+        <div class="overflow-x-auto rounded-xl border border-slate-800">
+          <table class="w-full text-left text-xs sm:text-sm">
+            <thead class="bg-slate-900 text-slate-200 uppercase text-xs">
+              <tr><th class="p-3.5">Game Title</th><th class="p-3.5">Engine Yaw</th><th class="p-3.5">Typical Pro eDPI</th><th class="p-3.5">Typical Pro cm/360°</th></tr>
+            </thead>
+            <tbody class="divide-y divide-slate-800 bg-slate-950/60">
+              <tr><td class="p-3.5 font-semibold text-white">Valorant</td><td class="p-3.5 font-mono">0.0700°</td><td class="p-3.5 font-mono">220 – 340 eDPI</td><td class="p-3.5 font-mono">38 – 59 cm</td></tr>
+              <tr><td class="p-3.5 font-semibold text-white">Counter-Strike 2 (CS2)</td><td class="p-3.5 font-mono">0.0220°</td><td class="p-3.5 font-mono">700 – 1050 eDPI</td><td class="p-3.5 font-mono">39 – 59 cm</td></tr>
+              <tr><td class="p-3.5 font-semibold text-white">Apex Legends</td><td class="p-3.5 font-mono">0.0220°</td><td class="p-3.5 font-mono">960 – 1440 eDPI</td><td class="p-3.5 font-mono">28 – 43 cm</td></tr>
+              <tr><td class="p-3.5 font-semibold text-white">Fortnite</td><td class="p-3.5 font-mono">0.005555°</td><td class="p-3.5 font-mono">40 – 68 eDPI (%)</td><td class="p-3.5 font-mono">24 – 40 cm</td></tr>
+              <tr><td class="p-3.5 font-semibold text-white">Overwatch 2 / Warzone</td><td class="p-3.5 font-mono">0.0066°</td><td class="p-3.5 font-mono">3200 – 4800 eDPI</td><td class="p-3.5 font-mono">28 – 43 cm</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
     </article>
 
     <script>
       (function() {
         const yaws = {
-          valorant: 0.07,
-          cs2: 0.022,
-          apex: 0.022,
-          fortnite: 0.005555,
-          overwatch2: 0.0066,
-          warzone: 0.0066,
-          r6: 0.005729578
+          valorant: 0.07, cs2: 0.022, apex: 0.022, fortnite: 0.005555, overwatch2: 0.0066, warzone: 0.0066, r6: 0.005729578
         };
         const sFrom = document.getElementById('sFrom');
         const sTo = document.getElementById('sTo');
@@ -171,9 +167,6 @@
         const sPadBar = document.getElementById('sPadBar');
         const sPadPct = document.getElementById('sPadPct');
         const sStyleTag = document.getElementById('sStyleTag');
-
-        sFrom.value = 'valorant';
-        sTo.value = 'cs2';
 
         function calc() {
           const sens = Math.max(0.0001, parseFloat(sInSens.value) || 0.35);
@@ -195,11 +188,8 @@
         }
 
         document.getElementById('sSwap').addEventListener('click', () => {
-          const tmp = sFrom.value;
-          sFrom.value = sTo.value;
-          sTo.value = tmp;
-          sInSens.value = sOutSens.textContent;
-          calc();
+          const tmp = sFrom.value; sFrom.value = sTo.value; sTo.value = tmp;
+          sInSens.value = sOutSens.textContent; calc();
         });
         document.querySelectorAll('.dpi-pill').forEach(b => b.addEventListener('click', () => { sDpi.value = b.dataset.dpi; calc(); }));
         document.getElementById('sCopy').addEventListener('click', function() {
@@ -219,31 +209,30 @@
         <p class="leading-relaxed text-slate-400">Zero-latency browser benchmarks for visual reaction time, 100-word WPM typing speed, cross-game sensitivity, and USB mouse polling rates.</p>
       </div>
       <div>
-        <div class="font-semibold text-slate-200 mb-2">Daily Speed Benchmarks</div>
+        <div class="font-semibold text-slate-200 mb-2">Interactive Benchmarks</div>
         <ul class="space-y-1.5">
           <li><a href="/" class="hover:text-white">Visual Reaction Time Test</a></li>
-          <li><a href="/typing-test" class="hover:text-white">Typing Speed &amp; Code WPM Test</a></li>
+          <li><a href="/typing-test" class="hover:text-white">Typing Speed &amp; Code WPM</a></li>
           <li><a href="/100-words-typing-test" class="hover:text-white">100 Words Typing Test</a></li>
-          <li><a href="/viral-typing-challenge" class="hover:text-white">Viral Typing Challenge</a></li>
-          <li><a href="/cps-test" class="hover:text-white">CPS Click Speed Test</a></li>
+          <li><a href="/viral-typing-challenge" class="hover:text-white">Viral 100-Word Challenge</a></li>
         </ul>
       </div>
       <div>
-        <div class="font-semibold text-slate-200 mb-2">Gaming &amp; Hardware Tools</div>
+        <div class="font-semibold text-slate-200 mb-2">Hardware &amp; Aim Tools</div>
         <ul class="space-y-1.5">
-          <li><a href="/sensitivity-converter" class="hover:text-white">Game Sensitivity Converter</a></li>
-          <li><a href="/edpi-calculator" class="hover:text-white">eDPI &amp; cm/360° Calculator</a></li>
-          <li><a href="/valorant-to-cs2-sensitivity" class="hover:text-white">Valorant to CS2 Sensitivity</a></li>
-          <li><a href="/mouse-polling-rate-test" class="hover:text-white">Mouse Polling Rate (Hz) Test</a></li>
+          <li><a href="/sensitivity-converter" class="hover:text-white">Game Sensitivity &amp; eDPI Converter</a></li>
+          <li><a href="/cps-polling-test" class="hover:text-white">CPS &amp; Mouse Polling Rate (Hz)</a></li>
+          <li><a href="/guides/mouse-sensitivity-edpi-cm360" class="hover:text-white">eDPI &amp; cm/360° Engineering</a></li>
+          <li><a href="/guides/mouse-polling-rate-input-lag" class="hover:text-white">125Hz vs. 1000Hz Polling Guide</a></li>
         </ul>
       </div>
       <div>
-        <div class="font-semibold text-slate-200 mb-2">Guides &amp; Policies</div>
+        <div class="font-semibold text-slate-200 mb-2">Editorial &amp; Policies</div>
         <ul class="space-y-1.5">
-          <li><a href="/guides/human-reaction-time-science" class="hover:text-white">Reaction Time &amp; Hz Guide</a></li>
-          <li><a href="/guides/typing-speed-wpm-accuracy" class="hover:text-white">100+ WPM Typing Guide</a></li>
+          <li><a href="/guides/human-reaction-time-science" class="hover:text-white">Reaction Time &amp; Hz Science</a></li>
+          <li><a href="/guides/typing-speed-wpm-accuracy" class="hover:text-white">100+ WPM Accuracy Guide</a></li>
           <li><a href="/about" class="hover:text-white">About</a> &middot; <a href="/contact" class="hover:text-white">Contact</a></li>
-          <li><a href="/privacy" class="hover:text-white">Privacy</a> &middot; <a href="/terms" class="hover:text-white">Terms</a></li>
+          <li><a href="/privacy" class="hover:text-white">Privacy Policy</a> &middot; <a href="/terms" class="hover:text-white">Terms</a></li>
         </ul>
       </div>
     </div>

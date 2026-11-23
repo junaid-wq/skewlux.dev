@@ -4,17 +4,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Reaction Time Test (ms) — Visual Reflex &amp; Input Latency Benchmark | SkewLux.dev</title>
-  <meta name="description" content="Test your human visual reaction time in milliseconds with 5-round average tracking, Spacebar mode, and percentile ranking." />
+  <meta name="description" content="Test your human visual reaction time in milliseconds with 5-round average tracking, Spacebar mode, and hardware latency benchmarks." />
   <meta name="robots" content="index, follow, max-image-preview:large" />
   <link rel="canonical" href="https://skewlux.dev/" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Reaction Time Test (ms) — Visual Reflex &amp; Input Latency Benchmark | SkewLux.dev" />
-  <meta property="og:description" content="Test your human visual reaction time in milliseconds with 5-round average tracking, Spacebar mode, and percentile ranking." />
+  <meta property="og:description" content="Test your human visual reaction time in milliseconds with 5-round average tracking, Spacebar mode, and hardware latency benchmarks." />
   <meta property="og:url" content="https://skewlux.dev/" />
   <meta name="google-adsense-account" content="ca-pub-4317028384309274" />
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4317028384309274" crossorigin="anonymous"></script>
   <script src="https://cdn.tailwindcss.com"></script>
-  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","name":"SkewLux.dev","url":"https://skewlux.dev/"},{"@type":"SoftwareApplication","name":"SkewLux Visual Reaction Time Test","url":"https://skewlux.dev/","applicationCategory":"GameApplication","operatingSystem":"Web Browser","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is 180 ms a good reaction time?","acceptedAnswer":{"@type":"Answer","text":"Yes. Scoring 180 ms or lower puts you in the top 10% of human visual reflex speeds and matches the baseline of competitive FPS players."}},{"@type":"Question","name":"How can I lower my reaction time score?","acceptedAnswer":{"@type":"Answer","text":"Switch your monitor to its highest refresh rate (144Hz-240Hz), enable monitor Game Mode, use a wired or 2.4GHz mouse instead of Bluetooth, and test with the Spacebar."}}]}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","name":"SkewLux.dev","url":"https://skewlux.dev/"},{"@type":"SoftwareApplication","name":"SkewLux Visual Reaction Time Test","url":"https://skewlux.dev/","applicationCategory":"GameApplication","operatingSystem":"Web Browser","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is 180 ms a good reaction time?","acceptedAnswer":{"@type":"Answer","text":"Yes. Scoring 180 ms or lower puts you in the top 10% of human visual reflex speeds and matches the baseline of competitive FPS players."}},{"@type":"Question","name":"Why is my Spacebar score faster than my mouse click?","acceptedAnswer":{"@type":"Answer","text":"Mechanical and laptop scissor switches often actuate higher in the key travel than heavy mouse microswitches, and keyboard polling avoids wireless mouse sleep wake-up delays."}}]}]}</script>
 </head>
 <body class="bg-[#090d16] text-slate-100 min-h-screen flex flex-col font-sans antialiased selection:bg-emerald-500/30">
   <header class="border-b border-slate-800/80 bg-[#090d16]/95 backdrop-blur sticky top-0 z-40">
@@ -28,7 +28,7 @@
       <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-300">
         <a href="/" class="hover:text-white transition">Reaction Test</a>
         <a href="/typing-test" class="hover:text-white transition">Typing Speed</a>
-        <a href="/100-words-typing-test" class="hover:text-white transition">100 Words Test</a>
+        <a href="/100-words-typing-test" class="hover:text-white transition">100 Words</a>
         <a href="/sensitivity-converter" class="hover:text-white transition">Sens Converter</a>
         <a href="/cps-polling-test" class="hover:text-white transition">CPS &amp; Hz Test</a>
         <a href="/guides/human-reaction-time-science" class="text-emerald-400 hover:text-emerald-300 transition">Guides</a>
@@ -102,48 +102,58 @@
     </section>
 
     <section class="mb-14">
-      <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
-        <h2 class="text-2xl font-bold text-white">Trending Daily Browser Tests &amp; Calculators</h2>
-        <span class="text-xs text-slate-400">100% Free &middot; Instant Browser Execution</span>
-      </div>
+      <h2 class="text-2xl font-bold text-white mb-4">All SkewLux Interactive Speed &amp; Hardware Benchmarks</h2>
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        <a href="/100-words-typing-test" class="p-5 rounded-xl bg-slate-900/80 border border-indigo-500/40 hover:border-indigo-400 transition">
-          <div class="text-xs font-semibold text-indigo-400 uppercase">Viral 100-Word Race</div>
-          <div class="text-base font-bold text-white mt-1 mb-1">100 Words Typing Test (WPM)</div>
-          <p class="text-xs text-slate-400">Race through the top 100 most searched English words and viral speed passages.</p>
+        <a href="/typing-test" class="p-5 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-indigo-500/50 transition">
+          <div class="text-xs font-semibold text-indigo-400 uppercase">Keyboard Speed Lab</div>
+          <div class="text-base font-bold text-white mt-1 mb-1">Typing Speed &amp; Code WPM Test</div>
+          <p class="text-xs text-slate-400">Benchmark WPM across 15s, 30s, 60s, and developer JavaScript/Python code snippets.</p>
+        </a>
+        <a href="/100-words-typing-test" class="p-5 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-indigo-500/50 transition">
+          <div class="text-xs font-semibold text-indigo-400 uppercase">100-Word Sprint</div>
+          <div class="text-base font-bold text-white mt-1 mb-1">100 Words Typing Test</div>
+          <p class="text-xs text-slate-400">Race through the top 100 most-searched English words and measure completion time.</p>
         </a>
         <a href="/viral-typing-challenge" class="p-5 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-emerald-500/50 transition">
-          <div class="text-xs font-semibold text-emerald-400 uppercase">1% Accuracy Challenge</div>
-          <div class="text-base font-bold text-white mt-1 mb-1">Viral 100-Word Speed Challenge</div>
-          <p class="text-xs text-slate-400">Test your WPM on viral internet quotes, gaming lore, and developer syntax.</p>
-        </a>
-        <a href="/cps-test" class="p-5 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-amber-500/50 transition">
-          <div class="text-xs font-semibold text-amber-400 uppercase">Click Speed Benchmark</div>
-          <div class="text-base font-bold text-white mt-1 mb-1">CPS Test (1s, 5s &amp; 10s Clicks)</div>
-          <p class="text-xs text-slate-400">Measure clicks per second with ripple feedback and saved high scores.</p>
+          <div class="text-xs font-semibold text-emerald-400 uppercase">Curated Passages</div>
+          <div class="text-base font-bold text-white mt-1 mb-1">Viral 100-Word Typing Challenge</div>
+          <p class="text-xs text-slate-400">Test real-world punctuation and rhythm on 4 curated 100-word speed passages.</p>
         </a>
         <a href="/sensitivity-converter" class="p-5 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-sky-500/50 transition">
-          <div class="text-xs font-semibold text-sky-400 uppercase">FPS Aim Converter</div>
-          <div class="text-base font-bold text-white mt-1 mb-1">Valorant, CS2 &amp; Apex Sens</div>
-          <p class="text-xs text-slate-400">Convert mouse sensitivity and exact cm/360° turn distance across 7 shooters.</p>
+          <div class="text-xs font-semibold text-sky-400 uppercase">FPS Aim Math</div>
+          <div class="text-base font-bold text-white mt-1 mb-1">Sensitivity &amp; eDPI Converter</div>
+          <p class="text-xs text-slate-400">Match exact cm/360° turn distance across Valorant, CS2, Apex, Fortnite &amp; Warzone.</p>
         </a>
-        <a href="/edpi-calculator" class="p-5 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-sky-500/50 transition">
-          <div class="text-xs font-semibold text-sky-400 uppercase">Pro Settings Math</div>
-          <div class="text-base font-bold text-white mt-1 mb-1">eDPI &amp; cm/360° Calculator</div>
-          <p class="text-xs text-slate-400">Calculate true effective DPI and XL mousepad swipe distance instantly.</p>
+        <a href="/cps-polling-test" class="p-5 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-amber-500/50 transition">
+          <div class="text-xs font-semibold text-amber-400 uppercase">Mouse Switch &amp; Sensor</div>
+          <div class="text-base font-bold text-white mt-1 mb-1">CPS &amp; Mouse Polling Rate (Hz)</div>
+          <p class="text-xs text-slate-400">Measure clicks per second with ripples and verify 125Hz–4000Hz USB polling stability.</p>
         </a>
-        <a href="/mouse-polling-rate-test" class="p-5 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-emerald-500/50 transition">
-          <div class="text-xs font-semibold text-emerald-400 uppercase">USB Hardware Check</div>
-          <div class="text-base font-bold text-white mt-1 mb-1">Mouse Polling Rate (Hz) Test</div>
-          <p class="text-xs text-slate-400">Verify 125Hz, 500Hz, 1000Hz, or 4000Hz sensor reporting in real time.</p>
+        <a href="/guides/human-reaction-time-science" class="p-5 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-emerald-500/50 transition">
+          <div class="text-xs font-semibold text-emerald-400 uppercase">Technical Guides</div>
+          <div class="text-base font-bold text-white mt-1 mb-1">Latency &amp; Performance Library</div>
+          <p class="text-xs text-slate-400">Deep engineering breakdowns on display Hz, USB polling intervals, and touch typing.</p>
         </a>
       </div>
     </section>
 
     <article class="max-w-4xl space-y-8 text-slate-300 leading-relaxed">
       <section>
-        <h2 class="text-2xl font-bold text-white mb-3">What Is an Average Human Visual Reaction Time?</h2>
-        <p>Across millions of desktop and laptop browser sessions, the median human visual reaction time sits between <strong>215 ms and 250 ms</strong>. Competitive esports players using low-latency gaming mice and 240Hz+ monitors routinely score between <strong>150 ms and 185 ms</strong>, whereas 60Hz office laptops with wireless Bluetooth mice often add 35 ms to 60 ms of hardware display and USB polling delay on top of biological nerve conduction.</p>
+        <h2 class="text-2xl font-bold text-white mb-3">Human Visual Reaction Time Benchmarks by Hardware Setup</h2>
+        <p class="mb-4">Total measured reaction time in a web browser equals your biological visual-to-motor nerve response (~145–185 ms) plus your hardware pipeline latency (monitor refresh scanout, browser compositor frame pacing, and mouse switch debounce).</p>
+        <div class="overflow-x-auto rounded-xl border border-slate-800">
+          <table class="w-full text-left text-xs sm:text-sm">
+            <thead class="bg-slate-900 text-slate-200 uppercase text-xs">
+              <tr><th class="p-3.5">Percentile Tier</th><th class="p-3.5">Score Range</th><th class="p-3.5">Typical Hardware &amp; Input Profile</th></tr>
+            </thead>
+            <tbody class="divide-y divide-slate-800 bg-slate-950/60">
+              <tr><td class="p-3.5 font-semibold text-emerald-400">Top 2% (Esports Tier)</td><td class="p-3.5 font-mono">140 – 165 ms</td><td class="p-3.5">240Hz–360Hz monitor + 1000Hz wired/2.4GHz optical switch mouse</td></tr>
+              <tr><td class="p-3.5 font-semibold text-sky-400">Top 15% (Competitive)</td><td class="p-3.5 font-mono">166 – 195 ms</td><td class="p-3.5">144Hz–165Hz gaming laptop or desktop with Game Mode enabled</td></tr>
+              <tr><td class="p-3.5 font-semibold text-white">Median (Human Baseline)</td><td class="p-3.5 font-mono">200 – 250 ms</td><td class="p-3.5">Standard 60Hz–120Hz display with standard USB mouse or Spacebar</td></tr>
+              <tr><td class="p-3.5 font-semibold text-amber-400">High-Latency Setup</td><td class="p-3.5 font-mono">255 – 320+ ms</td><td class="p-3.5">60Hz TV/laptop with Bluetooth mouse or power-saving display mode</td></tr>
+            </tbody>
+          </table>
+        </div>
       </section>
       <section>
         <h2 class="text-2xl font-bold text-white mb-4">Frequently Asked Questions</h2>
@@ -153,8 +163,8 @@
             <p class="text-sm text-slate-300">Yes. Scoring 180 ms or lower puts you in the top 10% of human visual reflex speeds and matches the baseline of competitive FPS players.</p>
           </div>
           <div class="p-5 rounded-xl bg-slate-900/70 border border-slate-800">
-            <h3 class="text-base font-semibold text-white mb-2">How can I lower my reaction time score?</h3>
-            <p class="text-sm text-slate-300">Switch your monitor to its highest refresh rate (144Hz–240Hz), enable monitor Game Mode, use a wired or 2.4GHz mouse instead of Bluetooth, and test with the Spacebar.</p>
+            <h3 class="text-base font-semibold text-white mb-2">Why is my Spacebar score faster than my mouse click?</h3>
+            <p class="text-sm text-slate-300">Mechanical and laptop scissor switches often actuate higher in the key travel than heavy mouse microswitches, and keyboard polling avoids wireless mouse sleep wake-up delays.</p>
           </div>
         </div>
       </section>
@@ -211,10 +221,7 @@
           dotsEl.innerHTML = dotsHtml;
 
           if (!scores.length) {
-            bestEl.textContent = '-- ms';
-            avgEl.textContent = '-- ms';
-            histEl.innerHTML = '';
-            markerEl.classList.add('hidden');
+            bestEl.textContent = '-- ms'; avgEl.textContent = '-- ms'; histEl.innerHTML = ''; markerEl.classList.add('hidden');
             return;
           }
           const best = Math.min(...scores);
@@ -265,9 +272,7 @@
           if (state === 'idle' || state === 'result' || state === 'early') {
             startRound();
           } else if (state === 'waiting') {
-            clearTimeout(timer);
-            state = 'early';
-            beep(220);
+            clearTimeout(timer); state = 'early'; beep(220);
             arena.className = 'w-full h-80 sm:h-96 rounded-3xl bg-amber-950/85 border-2 border-amber-500/60 flex flex-col items-center justify-center text-center p-6 cursor-pointer select-none shadow-2xl';
             badge.className = 'text-xs font-bold uppercase tracking-widest text-amber-300 mb-3';
             badge.textContent = 'False Start';
@@ -277,9 +282,7 @@
             sub.textContent = 'You clicked before green. Click anywhere to retry.';
           } else if (state === 'ready') {
             const diff = Math.max(1, Math.round(performance.now() - startTime));
-            scores.push(diff);
-            state = 'result';
-            renderStats();
+            scores.push(diff); state = 'result'; renderStats();
             arena.className = 'w-full h-80 sm:h-96 rounded-3xl bg-slate-900 border-2 border-indigo-500/50 flex flex-col items-center justify-center text-center p-6 cursor-pointer select-none shadow-2xl';
             badge.className = 'text-xs font-bold uppercase tracking-widest text-emerald-400 mb-2';
             badge.textContent = rankLabel(diff);
@@ -293,8 +296,7 @@
         arena.addEventListener('pointerdown', (e) => { e.preventDefault(); trigger(); });
         window.addEventListener('keydown', (e) => {
           if (e.code === 'Space' && document.activeElement.tagName !== 'BUTTON' && document.activeElement.tagName !== 'INPUT') {
-            e.preventDefault();
-            trigger();
+            e.preventDefault(); trigger();
           }
         });
         document.getElementById('rxReset').addEventListener('click', () => {
@@ -323,31 +325,30 @@
         <p class="leading-relaxed text-slate-400">Zero-latency browser benchmarks for visual reaction time, 100-word WPM typing speed, cross-game sensitivity, and USB mouse polling rates.</p>
       </div>
       <div>
-        <div class="font-semibold text-slate-200 mb-2">Daily Speed Benchmarks</div>
+        <div class="font-semibold text-slate-200 mb-2">Interactive Benchmarks</div>
         <ul class="space-y-1.5">
           <li><a href="/" class="hover:text-white">Visual Reaction Time Test</a></li>
-          <li><a href="/typing-test" class="hover:text-white">Typing Speed &amp; Code WPM Test</a></li>
+          <li><a href="/typing-test" class="hover:text-white">Typing Speed &amp; Code WPM</a></li>
           <li><a href="/100-words-typing-test" class="hover:text-white">100 Words Typing Test</a></li>
-          <li><a href="/viral-typing-challenge" class="hover:text-white">Viral Typing Challenge</a></li>
-          <li><a href="/cps-test" class="hover:text-white">CPS Click Speed Test</a></li>
+          <li><a href="/viral-typing-challenge" class="hover:text-white">Viral 100-Word Challenge</a></li>
         </ul>
       </div>
       <div>
-        <div class="font-semibold text-slate-200 mb-2">Gaming &amp; Hardware Tools</div>
+        <div class="font-semibold text-slate-200 mb-2">Hardware &amp; Aim Tools</div>
         <ul class="space-y-1.5">
-          <li><a href="/sensitivity-converter" class="hover:text-white">Game Sensitivity Converter</a></li>
-          <li><a href="/edpi-calculator" class="hover:text-white">eDPI &amp; cm/360° Calculator</a></li>
-          <li><a href="/valorant-to-cs2-sensitivity" class="hover:text-white">Valorant to CS2 Sensitivity</a></li>
-          <li><a href="/mouse-polling-rate-test" class="hover:text-white">Mouse Polling Rate (Hz) Test</a></li>
+          <li><a href="/sensitivity-converter" class="hover:text-white">Game Sensitivity &amp; eDPI Converter</a></li>
+          <li><a href="/cps-polling-test" class="hover:text-white">CPS &amp; Mouse Polling Rate (Hz)</a></li>
+          <li><a href="/guides/mouse-sensitivity-edpi-cm360" class="hover:text-white">eDPI &amp; cm/360° Engineering</a></li>
+          <li><a href="/guides/mouse-polling-rate-input-lag" class="hover:text-white">125Hz vs. 1000Hz Polling Guide</a></li>
         </ul>
       </div>
       <div>
-        <div class="font-semibold text-slate-200 mb-2">Guides &amp; Policies</div>
+        <div class="font-semibold text-slate-200 mb-2">Editorial &amp; Policies</div>
         <ul class="space-y-1.5">
-          <li><a href="/guides/human-reaction-time-science" class="hover:text-white">Reaction Time &amp; Hz Guide</a></li>
-          <li><a href="/guides/typing-speed-wpm-accuracy" class="hover:text-white">100+ WPM Typing Guide</a></li>
+          <li><a href="/guides/human-reaction-time-science" class="hover:text-white">Reaction Time &amp; Hz Science</a></li>
+          <li><a href="/guides/typing-speed-wpm-accuracy" class="hover:text-white">100+ WPM Accuracy Guide</a></li>
           <li><a href="/about" class="hover:text-white">About</a> &middot; <a href="/contact" class="hover:text-white">Contact</a></li>
-          <li><a href="/privacy" class="hover:text-white">Privacy</a> &middot; <a href="/terms" class="hover:text-white">Terms</a></li>
+          <li><a href="/privacy" class="hover:text-white">Privacy Policy</a> &middot; <a href="/terms" class="hover:text-white">Terms</a></li>
         </ul>
       </div>
     </div>

@@ -14,7 +14,7 @@
   <meta name="google-adsense-account" content="ca-pub-4317028384309274" />
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4317028384309274" crossorigin="anonymous"></script>
   <script src="https://cdn.tailwindcss.com"></script>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"CPS Click Speed &amp; Mouse Polling Rate (Hz) Test","url":"https://skewlux.dev/cps-polling-test","applicationCategory":"UtilitiesApplication","operatingSystem":"Web Browser","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"SkewLux CPS Click Speed & Mouse Polling Rate Test","url":"https://skewlux.dev/cps-polling-test","applicationCategory":"UtilitiesApplication","operatingSystem":"Web Browser","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
 </head>
 <body class="bg-[#090d16] text-slate-100 min-h-screen flex flex-col font-sans antialiased selection:bg-emerald-500/30">
   <header class="border-b border-slate-800/80 bg-[#090d16]/95 backdrop-blur sticky top-0 z-40">
@@ -28,7 +28,7 @@
       <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-300">
         <a href="/" class="hover:text-white transition">Reaction Test</a>
         <a href="/typing-test" class="hover:text-white transition">Typing Speed</a>
-        <a href="/100-words-typing-test" class="hover:text-white transition">100 Words Test</a>
+        <a href="/100-words-typing-test" class="hover:text-white transition">100 Words</a>
         <a href="/sensitivity-converter" class="hover:text-white transition">Sens Converter</a>
         <a href="/cps-polling-test" class="hover:text-white transition">CPS &amp; Hz Test</a>
         <a href="/guides/human-reaction-time-science" class="text-emerald-400 hover:text-emerald-300 transition">Guides</a>
@@ -63,7 +63,7 @@
     <section class="mb-6">
       <span class="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-amber-500/15 text-amber-300 border border-amber-500/30 mb-2">Mouse Switch &amp; USB Polling Benchmark</span>
       <h1 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">CPS Click Speed &amp; Mouse Polling Rate (Hz) Test</h1>
-      <p class="text-slate-300 text-sm sm:text-base mt-2 max-w-3xl">Measure your peak Clicks Per Second (CPS) across 1s, 5s, or 10s intervals and analyze your mouse USB polling stability in real time.</p>
+      <p class="text-slate-300 text-sm sm:text-base mt-2 max-w-3xl">Measure your peak Clicks Per Second (CPS) across 1s, 5s, or 10s intervals and verify your gaming mouse USB polling frequency in real time.</p>
     </section>
 
     <section class="grid lg:grid-cols-12 gap-6 mb-12">
@@ -116,9 +116,23 @@
       </div>
     </section>
 
-    <article class="max-w-4xl space-y-6 text-slate-300 leading-relaxed">
-      <h2 class="text-2xl font-bold text-white">Understanding CPS Benchmarks &amp; USB Polling Rates</h2>
-      <p>Regular single-finger clicking averages <strong>6.0 to 7.5 CPS</strong>, while jitter-clicking and butterfly-clicking techniques reach <strong>11 to 16+ CPS</strong>. Meanwhile, USB polling rate determines how many times per second your mouse reports sensor displacement to Windows or macOS—upgrading from 125 Hz to 1000 Hz cuts maximum cursor reporting latency from 8.0 ms down to 1.0 ms.</p>
+    <article class="max-w-4xl space-y-8 text-slate-300 leading-relaxed">
+      <section>
+        <h2 class="text-2xl font-bold text-white mb-3">USB Mouse Polling Rates &amp; CPS Technique Reference</h2>
+        <div class="overflow-x-auto rounded-xl border border-slate-800">
+          <table class="w-full text-left text-xs sm:text-sm">
+            <thead class="bg-slate-900 text-slate-200 uppercase text-xs">
+              <tr><th class="p-3.5">Polling Rate</th><th class="p-3.5">Report Interval</th><th class="p-3.5">Recommended Display Pairing</th></tr>
+            </thead>
+            <tbody class="divide-y divide-slate-800 bg-slate-950/60">
+              <tr><td class="p-3.5 font-semibold text-white">125 Hz (Standard Office)</td><td class="p-3.5 font-mono">8.00 ms</td><td class="p-3.5">60Hz office monitors &amp; battery-saving laptop trackpads</td></tr>
+              <tr><td class="p-3.5 font-semibold text-sky-400">500 Hz (Balanced Wireless)</td><td class="p-3.5 font-mono">2.00 ms</td><td class="p-3.5">120Hz–144Hz laptops with extended wireless battery life</td></tr>
+              <tr><td class="p-3.5 font-semibold text-emerald-400">1000 Hz (Esports Standard)</td><td class="p-3.5 font-mono">1.00 ms</td><td class="p-3.5">144Hz–240Hz competitive gaming monitors</td></tr>
+              <tr><td class="p-3.5 font-semibold text-amber-400">4000 Hz – 8000 Hz</td><td class="p-3.5 font-mono">0.25 – 0.125 ms</td><td class="p-3.5">240Hz–540Hz displays on modern multi-core CPUs</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
     </article>
 
     <script>
@@ -248,31 +262,30 @@
         <p class="leading-relaxed text-slate-400">Zero-latency browser benchmarks for visual reaction time, 100-word WPM typing speed, cross-game sensitivity, and USB mouse polling rates.</p>
       </div>
       <div>
-        <div class="font-semibold text-slate-200 mb-2">Daily Speed Benchmarks</div>
+        <div class="font-semibold text-slate-200 mb-2">Interactive Benchmarks</div>
         <ul class="space-y-1.5">
           <li><a href="/" class="hover:text-white">Visual Reaction Time Test</a></li>
-          <li><a href="/typing-test" class="hover:text-white">Typing Speed &amp; Code WPM Test</a></li>
+          <li><a href="/typing-test" class="hover:text-white">Typing Speed &amp; Code WPM</a></li>
           <li><a href="/100-words-typing-test" class="hover:text-white">100 Words Typing Test</a></li>
-          <li><a href="/viral-typing-challenge" class="hover:text-white">Viral Typing Challenge</a></li>
-          <li><a href="/cps-test" class="hover:text-white">CPS Click Speed Test</a></li>
+          <li><a href="/viral-typing-challenge" class="hover:text-white">Viral 100-Word Challenge</a></li>
         </ul>
       </div>
       <div>
-        <div class="font-semibold text-slate-200 mb-2">Gaming &amp; Hardware Tools</div>
+        <div class="font-semibold text-slate-200 mb-2">Hardware &amp; Aim Tools</div>
         <ul class="space-y-1.5">
-          <li><a href="/sensitivity-converter" class="hover:text-white">Game Sensitivity Converter</a></li>
-          <li><a href="/edpi-calculator" class="hover:text-white">eDPI &amp; cm/360° Calculator</a></li>
-          <li><a href="/valorant-to-cs2-sensitivity" class="hover:text-white">Valorant to CS2 Sensitivity</a></li>
-          <li><a href="/mouse-polling-rate-test" class="hover:text-white">Mouse Polling Rate (Hz) Test</a></li>
+          <li><a href="/sensitivity-converter" class="hover:text-white">Game Sensitivity &amp; eDPI Converter</a></li>
+          <li><a href="/cps-polling-test" class="hover:text-white">CPS &amp; Mouse Polling Rate (Hz)</a></li>
+          <li><a href="/guides/mouse-sensitivity-edpi-cm360" class="hover:text-white">eDPI &amp; cm/360° Engineering</a></li>
+          <li><a href="/guides/mouse-polling-rate-input-lag" class="hover:text-white">125Hz vs. 1000Hz Polling Guide</a></li>
         </ul>
       </div>
       <div>
-        <div class="font-semibold text-slate-200 mb-2">Guides &amp; Policies</div>
+        <div class="font-semibold text-slate-200 mb-2">Editorial &amp; Policies</div>
         <ul class="space-y-1.5">
-          <li><a href="/guides/human-reaction-time-science" class="hover:text-white">Reaction Time &amp; Hz Guide</a></li>
-          <li><a href="/guides/typing-speed-wpm-accuracy" class="hover:text-white">100+ WPM Typing Guide</a></li>
+          <li><a href="/guides/human-reaction-time-science" class="hover:text-white">Reaction Time &amp; Hz Science</a></li>
+          <li><a href="/guides/typing-speed-wpm-accuracy" class="hover:text-white">100+ WPM Accuracy Guide</a></li>
           <li><a href="/about" class="hover:text-white">About</a> &middot; <a href="/contact" class="hover:text-white">Contact</a></li>
-          <li><a href="/privacy" class="hover:text-white">Privacy</a> &middot; <a href="/terms" class="hover:text-white">Terms</a></li>
+          <li><a href="/privacy" class="hover:text-white">Privacy Policy</a> &middot; <a href="/terms" class="hover:text-white">Terms</a></li>
         </ul>
       </div>
     </div>
