@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Typing Speed Test (WPM) — English, Code &amp; Number Pad | SkewLux.dev</title>
+  <meta name="description" content="Measure your typing speed in WPM and accuracy across 15s, 30s, and 60s tests with English words, JS/Python code, and number modes." />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <link rel="canonical" href="https://skewlux.dev/typing-test" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Typing Speed Test (WPM) — English, Code &amp; Number Pad | SkewLux.dev" />
+  <meta property="og:description" content="Measure your typing speed in WPM and accuracy across 15s, 30s, and 60s tests with English words, JS/Python code, and number modes." />
+  <meta property="og:url" content="https://skewlux.dev/typing-test" />
+  <meta name="google-adsense-account" content="ca-pub-4317028384309274" />
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4317028384309274" crossorigin="anonymous"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Typing Speed &amp; Code WPM Test","url":"https://skewlux.dev/typing-test","applicationCategory":"UtilitiesApplication","operatingSystem":"Web Browser","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+</head>
+<body class="bg-[#090d16] text-slate-100 min-h-screen flex flex-col font-sans antialiased selection:bg-emerald-500/30">
+  <header class="border-b border-slate-800/80 bg-[#090d16]/95 backdrop-blur sticky top-0 z-40">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-2.5 font-bold text-lg text-white tracking-tight">
+        <span class="w-8 h-8 rounded-lg bg-gradient-to-br from-emerald-500 to-indigo-600 flex items-center justify-center text-white font-black shadow-lg shadow-emerald-500/20">S</span>
+        <span>SkewLux<span class="text-emerald-400">.dev</span></span>
+      </a>
+      <nav class="hidden md:flex items-center gap-6 text-sm text-slate-300">
+        <a href="/" class="hover:text-white transition">Reaction Test</a>
+        <a href="/typing-test" class="hover:text-white transition">Typing Speed</a>
+        <a href="/sensitivity-converter" class="hover:text-white transition">Sens Converter</a>
+        <a href="/cps-polling-test" class="hover:text-white transition">CPS &amp; Hz Test</a>
+        <a href="/guides/human-reaction-time-science" class="text-emerald-300 hover:text-emerald-200 transition">Guides</a>
+      </nav>
+    </div>
+  </header>
+  <main class="flex-1 max-w-6xl w-full mx-auto px-4 sm:px-6 py-10">
+    <section class="mb-6 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+      <div>
+        <span class="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-indigo-500/15 text-indigo-300 border border-indigo-500/30 mb-2">Keyboard Speed &amp; Accuracy Lab</span>
+        <h1 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">Typing Speed &amp; Code WPM Test</h1>
+        <p class="text-slate-300 text-sm sm:text-base mt-2 max-w-2xl">Benchmark your raw words-per-minute (WPM) and keystroke accuracy across timed sprints or developer syntax snippets.</p>
+      </div>
+      <div class="flex gap-3 text-xs">
+        <div class="px-4 py-2 rounded-xl bg-slate-900 border border-slate-800"><span class="text-slate-400 block">Time</span><strong id="tpTime" class="text-amber-400 text-lg">30s</strong></div>
+        <div class="px-4 py-2 rounded-xl bg-slate-900 border border-slate-800"><span class="text-slate-400 block">Live WPM</span><strong id="tpWpm" class="text-emerald-400 text-lg">0</strong></div>
+        <div class="px-4 py-2 rounded-xl bg-slate-900 border border-slate-800"><span class="text-slate-400 block">Accuracy</span><strong id="tpAcc" class="text-indigo-400 text-lg">100%</strong></div>
+      </div>
+    </section>
+
+    <section class="bg-slate-900/75 border border-slate-800 rounded-2xl p-5 sm:p-6 mb-12 space-y-5">
+      <div class="flex flex-wrap items-center justify-between gap-3">
+        <div class="flex flex-wrap gap-2 text-xs">
+          <button data-sec="15" class="tp-sec px-3 py-1.5 rounded-lg bg-slate-800 text-slate-200 border border-slate-700 font-semibold">15s</button>
+          <button data-sec="30" class="tp-sec px-3 py-1.5 rounded-lg bg-slate-800 text-slate-200 border border-slate-700 font-semibold">30s</button>
+          <button data-sec="60" class="tp-sec px-3 py-1.5 rounded-lg bg-slate-800 text-slate-200 border border-slate-700 font-semibold">60s</button>
+          <span class="border-l border-slate-700 mx-1"></span>
+          <button data-mode="words" class="tp-mode px-3 py-1.5 rounded-lg bg-slate-800 text-slate-200 border border-slate-700 font-semibold">English Words</button>
+          <button data-mode="code" class="tp-mode px-3 py-1.5 rounded-lg bg-slate-800 text-slate-200 border border-slate-700 font-semibold">JS / Python Code</button>
+          <button data-mode="numbers" class="tp-mode px-3 py-1.5 rounded-lg bg-slate-800 text-slate-200 border border-slate-700 font-semibold">Numbers &amp; Symbols</button>
+        </div>
+        <button id="tpRestart" type="button" class="px-4 py-1.5 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-semibold">Restart Test</button>
+      </div>
+
+      <div id="tpPrompt" class="p-5 rounded-xl bg-[#060911] border border-slate-800 font-mono text-lg sm:text-xl leading-relaxed tracking-wide select-none"></div>
+      <input id="tpInput" type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Start typing here to begin countdown..." class="w-full px-4 py-3.5 rounded-xl bg-slate-950 border border-indigo-500/40 focus:border-emerald-400 focus:outline-none font-mono text-base text-white" />
+      <div id="tpResult" class="hidden p-4 rounded-xl bg-emerald-950/60 border border-emerald-500/40 text-sm text-emerald-200 flex flex-wrap items-center justify-between gap-3"></div>
+    </section>
+
+    <article class="max-w-4xl space-y-6 text-slate-300 leading-relaxed">
+      <h2 class="text-2xl font-bold text-white">How Net WPM and Accuracy Are Calculated</h2><p>Standard typing benchmarks define one word as <strong>5 keystrokes</strong> (including spaces). Net WPM divides your correctly typed characters by 5 and normalizes by elapsed minutes, penalizing uncorrected typos automatically so sloppy bursts cannot inflate your score.</p>
+    </article>
+
+    <script>
+      (function() {
+        const banks = {
+          words: "the quick brown fox jumps over lazy dog system network latency browser frame keyboard speed accuracy rhythm focus steady flow practice modern cloud server packet route signal client render pixel buffer memory cache thread async await promise function return value const let array object string number boolean index query state",
+          code: "const fetchMetrics = async (url) => { const res = await fetch(url); if (!res.ok) throw new Error('HTTP_' + res.status); return await res.json(); }; function clamp(val, min, max) { return Math.min(max, Math.max(min, val)); } for (let i = 0; i < items.length; i++) { total += items[i].score; }",
+          numbers: "1024 4096 8192 144Hz 240Hz 360Hz 1920x1080 3840x2160 127.0.0.1 192.168.1.1 8080 443 99.95% 0.022 0.070 800dpi 1600dpi 45.5cm 2026 3.14159 65535 1000Hz 256bit 512MB 16GB"
+        };
+        let duration = 30;
+        let mode = 'words';
+        let targetText = '';
+        let timeLeft = duration;
+        let started = false;
+        let finished = false;
+        let interval = null;
+
+        const promptEl = document.getElementById('tpPrompt');
+        const inputEl = document.getElementById('tpInput');
+        const timeEl = document.getElementById('tpTime');
+        const wpmEl = document.getElementById('tpWpm');
+        const accEl = document.getElementById('tpAcc');
+        const resEl = document.getElementById('tpResult');
+
+        function highlightButtons() {
+          document.querySelectorAll('.tp-sec').forEach(b => {
+            b.className = parseInt(b.dataset.sec, 10) === duration
+              ? 'tp-sec px-3 py-1.5 rounded-lg bg-emerald-600 text-white font-semibold'
+              : 'tp-sec px-3 py-1.5 rounded-lg bg-slate-800 text-slate-200 border border-slate-700 font-semibold';
+          });
+          document.querySelectorAll('.tp-mode').forEach(b => {
+            b.className = b.dataset.mode === mode
+              ? 'tp-mode px-3 py-1.5 rounded-lg bg-indigo-600 text-white font-semibold'
+              : 'tp-mode px-3 py-1.5 rounded-lg bg-slate-800 text-slate-200 border border-slate-700 font-semibold';
+          });
+        }
+
+        function generateText() {
+          const pool = banks[mode].split(' ');
+          const out = [];
+          for (let i = 0; i < 65; i++) {
+            out.push(pool[Math.floor(Math.random() * pool.length)]);
+          }
+          targetText = out.join(' ');
+        }
+
+        function renderPrompt() {
+          const typed = inputEl.value;
+          let html = '';
+          const showLen = Math.min(targetText.length, Math.max(160, typed.length + 90));
+          for (let i = 0; i < showLen; i++) {
+            const ch = targetText[i] === ' ' ? '&nbsp;' : targetText[i].replace(/</g, '&lt;').replace(/>/g, '&gt;');
+            if (i < typed.length) {
+              if (typed[i] === targetText[i]) {
+                html += '<span class="text-emerald-400">' + ch + '</span>';
+              } else {
+                html += '<span class="bg-rose-500/40 text-rose-200 rounded">' + ch + '</span>';
+              }
+            } else if (i === typed.length) {
+              html += '<span class="border-b-2 border-emerald-400 text-white">' + ch + '</span>';
+            } else {
+              html += '<span class="text-slate-500">' + ch + '</span>';
+            }
+          }
+          promptEl.innerHTML = html;
+        }
+
+        function reset() {
+          clearInterval(interval);
+          started = false;
+          finished = false;
+          timeLeft = duration;
+          timeEl.textContent = duration + 's';
+          wpmEl.textContent = '0';
+          accEl.textContent = '100%';
+          inputEl.value = '';
+          inputEl.disabled = false;
+          resEl.classList.add('hidden');
+          generateText();
+          renderPrompt();
+          highlightButtons();
+        }
+
+        function finish() {
+          finished = true;
+          clearInterval(interval);
+          inputEl.disabled = true;
+          const typed = inputEl.value;
+          let correct = 0;
+          for (let i = 0; i < typed.length; i++) {
+            if (typed[i] === targetText[i]) correct++;
+          }
+          const mins = duration / 60;
+          const wpm = Math.round((correct / 5) / mins);
+          const acc = typed.length ? Math.round((correct / typed.length) * 100) : 100;
+          wpmEl.textContent = wpm;
+          accEl.textContent = acc + '%';
+          resEl.innerHTML = '<span><strong>Test Complete:</strong> ' + wpm + ' WPM at ' + acc + '% accuracy (' + duration + 's ' + mode + ')</span><button id="tpCopyRes" class="px-3 py-1 rounded bg-emerald-600 text-white text-xs font-semibold">Copy Score</button>';
+          resEl.classList.remove('hidden');
+          document.getElementById('tpCopyRes').addEventListener('click', function() {
+            navigator.clipboard.writeText('SkewLux.dev Typing Speed: ' + wpm + ' WPM (' + acc + '% accuracy) — https://skewlux.dev/typing-test');
+            this.textContent = 'Copied!';
+          });
+        }
+
+        inputEl.addEventListener('input', () => {
+          if (finished) return;
+          if (!started) {
+            started = true;
+            const t0 = performance.now();
+            interval = setInterval(() => {
+              const elapsed = (performance.now() - t0) / 1000;
+              const rem = Math.max(0, Math.ceil(duration - elapsed));
+              timeEl.textContent = rem + 's';
+              const typed = inputEl.value;
+              let correct = 0;
+              for (let i = 0; i < typed.length; i++) if (typed[i] === targetText[i]) correct++;
+              const curMins = Math.max(0.05, elapsed / 60);
+              wpmEl.textContent = Math.round((correct / 5) / curMins);
+              accEl.textContent = (typed.length ? Math.round((correct / typed.length) * 100) : 100) + '%';
+              if (elapsed >= duration) finish();
+            }, 100);
+          }
+          renderPrompt();
+        });
+
+        document.querySelectorAll('.tp-sec').forEach(b => b.addEventListener('click', () => { duration = parseInt(b.dataset.sec, 10); reset(); inputEl.focus(); }));
+        document.querySelectorAll('.tp-mode').forEach(b => b.addEventListener('click', () => { mode = b.dataset.mode; reset(); inputEl.focus(); }));
+        document.getElementById('tpRestart').addEventListener('click', () => { reset(); inputEl.focus(); });
+        reset();
+      })();
+    </script>
+  </main>
+  <footer class="border-t border-slate-800/80 py-10 text-xs text-slate-400 mt-16">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 grid sm:grid-cols-4 gap-8">
+      <div>
+        <div class="font-bold text-white text-sm mb-2">SkewLux.dev</div>
+        <p class="leading-relaxed text-slate-400">Zero-latency browser benchmarks for reaction time, WPM typing speed, cross-game mouse sensitivity, and peripheral polling rates.</p>
+      </div>
+      <div>
+        <div class="font-semibold text-slate-200 mb-2">Benchmark Studios</div>
+        <ul class="space-y-1.5">
+          <li><a href="/" class="hover:text-white">Visual Reaction Time Test</a></li>
+          <li><a href="/typing-test" class="hover:text-white">WPM &amp; Code Typing Test</a></li>
+          <li><a href="/sensitivity-converter" class="hover:text-white">Game Sensitivity Converter</a></li>
+          <li><a href="/cps-polling-test" class="hover:text-white">CPS &amp; Mouse Polling Rate Test</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="font-semibold text-slate-200 mb-2">Popular Converters</div>
+        <ul class="space-y-1.5">
+          <li><a href="/valorant-to-cs2-sensitivity" class="hover:text-white">Valorant to CS2 Sensitivity</a></li>
+          <li><a href="/cs2-to-valorant-sensitivity" class="hover:text-white">CS2 to Valorant Sensitivity</a></li>
+          <li><a href="/valorant-to-apex-sensitivity" class="hover:text-white">Valorant to Apex Legends</a></li>
+          <li><a href="/60-second-typing-test" class="hover:text-white">60 Second Typing Test</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="font-semibold text-slate-200 mb-2">Guides &amp; Policies</div>
+        <ul class="space-y-1.5">
+          <li><a href="/guides/human-reaction-time-science" class="hover:text-white">Reaction Time &amp; Hz Guide</a></li>
+          <li><a href="/guides/mouse-sensitivity-edpi-cm360" class="hover:text-white">eDPI &amp; cm/360° Guide</a></li>
+          <li><a href="/about" class="hover:text-white">About</a> &middot; <a href="/contact" class="hover:text-white">Contact</a></li>
+          <li><a href="/privacy" class="hover:text-white">Privacy</a> &middot; <a href="/terms" class="hover:text-white">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

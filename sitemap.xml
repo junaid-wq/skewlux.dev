@@ -1,13 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://skewlux.dev/</loc><lastmod>2026-11-23</lastmod></url>
-  <url><loc>https://skewlux.dev/svg-wave-generator</loc><lastmod>2026-11-23</lastmod></url>
-  <url><loc>https://skewlux.dev/glassmorphism-generator</loc><lastmod>2026-11-23</lastmod></url>
-  <url><loc>https://skewlux.dev/json-formatter</loc><lastmod>2026-11-23</lastmod></url>
-  <url><loc>https://skewlux.dev/guides/css-layered-shadows</loc><lastmod>2026-11-23</lastmod></url>
-  <url><loc>https://skewlux.dev/guides/svg-waves-data-uri</loc><lastmod>2026-11-23</lastmod></url>
-  <url><loc>https://skewlux.dev/guides/glassmorphism-gpu-performance</loc><lastmod>2026-11-23</lastmod></url>
-  <url><loc>https://skewlux.dev/guides/json-parsing-validation</loc><lastmod>2026-11-23</lastmod></url>
+  <url><loc>https://skewlux.dev/typing-test</loc><lastmod>2026-11-23</lastmod></url>
+  <url><loc>https://skewlux.dev/sensitivity-converter</loc><lastmod>2026-11-23</lastmod></url>
+  <url><loc>https://skewlux.dev/cps-polling-test</loc><lastmod>2026-11-23</lastmod></url>
+  <url><loc>https://skewlux.dev/valorant-to-cs2-sensitivity</loc><lastmod>2026-11-23</lastmod></url>
+  <url><loc>https://skewlux.dev/valorant-to-apex-sensitivity</loc><lastmod>2026-11-23</lastmod></url>
+  <url><loc>https://skewlux.dev/valorant-to-fortnite-sensitivity</loc><lastmod>2026-11-23</lastmod></url>
+  <url><loc>https://skewlux.dev/valorant-to-overwatch2-sensitivity</loc><lastmod>2026-11-23</lastmod></url>
+  <url><loc>https://skewlux.dev/valorant-to-warzone-sensitivity</loc><lastmod>2026-11-23</lastmod></url>
+  <url><loc>https://skewlux.dev/valorant-to-r6-sensitivity</loc><lastmod>2026-11-23</lastmod></url>
+  <url><loc>https://skewlux.dev/cs2-to-valorant-sensitivity</loc><lastmod>2026-11-23</lastmod></url>
+  <url><loc>https://skewlux.dev/cs2-to-apex-sensitivity</loc><lastmod>2026-11-23</lastmod></url>
+  <url><loc>https://skewlux.dev/cs2-to-fortnite-sensitivity</loc><lastmod>2026-11-23</lastmod></url>
+  <url><loc>https://skewlux.dev/cs2-to-overwatch2-sensitivity</loc><lastmod>2026-11-23</lastmod></url>
+  <url><loc>https://skewlux.dev/cs2-to-warzone-sensitivity</loc><lastmod>2026-11-23</lastmod></url>
+  <url><loc>https://skewlux.dev/cs2-to-r6-sensitivity</loc><lastmod>2026-11-23</lastmod></url>
+  <url><loc>https://skewlux.dev/apex-to-valorant-sensitivity</loc><lastmod>2026-11-23</lastmod></url>
+  <url><loc>https://skewlux.dev/apex-to-cs2-sensitivity</loc><lastmod>2026-11-23</lastmod></url>
+  <url><loc>https://skewlux.dev/apex-to-fortnite-sensitivity</loc><lastmod>2026-11-23</lastmod></url>
+  <url><loc>https://skewlux.dev/apex-to-overwatch2-sensitivity</loc><lastmod>2026-11-23</lastmod></url>
+  <url><loc>https://skewlux.dev/apex-to-warzone-sensitivity</loc><lastmod>2026-11-23</lastmod></url>
+  <url><loc>https://skewlux.dev/apex-to-r6-sensitivity</loc><lastmod>2026-11-23</lastmod></url>
+  <url><loc>https://skewlux.dev/fortnite-to-valorant-sensitivity</loc><lastmod>2026-11-23</lastmod></url>
+  <url><loc>https://skewlux.dev/fortnite-to-cs2-sensitivity</loc><lastmod>2026-11-23</lastmod></url>
+  <url><loc>https://skewlux.dev/fortnite-to-apex-sensitivity</loc><lastmod>2026-11-23</lastmod></url>
+  <url><loc>https://skewlux.dev/fortnite-to-overwatch2-sensitivity</loc><lastmod>2026-11-23</lastmod></url>
+  <url><loc>https://skewlux.dev/fortnite-to-warzone-sensitivity</loc><lastmod>2026-11-23</lastmod></url>
+  <url><loc>https://skewlux.dev/fortnite-to-r6-sensitivity</loc><lastmod>2026-11-23</lastmod></url>
+  <url><loc>https://skewlux.dev/overwatch2-to-valorant-sensitivity</loc><lastmod>2026-11-23</lastmod></url>
+  <url><loc>https://skewlux.dev/overwatch2-to-cs2-sensitivity</loc><lastmod>2026-11-23</lastmod></url>
+  <url><loc>https://skewlux.dev/overwatch2-to-apex-sensitivity</loc><lastmod>2026-11-23</lastmod></url>
+  <url><loc>https://skewlux.dev/overwatch2-to-fortnite-sensitivity</loc><lastmod>2026-11-23</lastmod></url>
+  <url><loc>https://skewlux.dev/overwatch2-to-warzone-sensitivity</loc><lastmod>2026-11-23</lastmod></url>
+  <url><loc>https://skewlux.dev/overwatch2-to-r6-sensitivity</loc><lastmod>2026-11-23</lastmod></url>
+  <url><loc>https://skewlux.dev/warzone-to-valorant-sensitivity</loc><lastmod>2026-11-23</lastmod></url>
+  <url><loc>https://skewlux.dev/warzone-to-cs2-sensitivity</loc><lastmod>2026-11-23</lastmod></url>
+  <url><loc>https://skewlux.dev/warzone-to-apex-sensitivity</loc><lastmod>2026-11-23</lastmod></url>
+  <url><loc>https://skewlux.dev/warzone-to-fortnite-sensitivity</loc><lastmod>2026-11-23</lastmod></url>
+  <url><loc>https://skewlux.dev/warzone-to-overwatch2-sensitivity</loc><lastmod>2026-11-23</lastmod></url>
+  <url><loc>https://skewlux.dev/warzone-to-r6-sensitivity</loc><lastmod>2026-11-23</lastmod></url>
+  <url><loc>https://skewlux.dev/r6-to-valorant-sensitivity</loc><lastmod>2026-11-23</lastmod></url>
+  <url><loc>https://skewlux.dev/r6-to-cs2-sensitivity</loc><lastmod>2026-11-23</lastmod></url>
+  <url><loc>https://skewlux.dev/r6-to-apex-sensitivity</loc><lastmod>2026-11-23</lastmod></url>
+  <url><loc>https://skewlux.dev/r6-to-fortnite-sensitivity</loc><lastmod>2026-11-23</lastmod></url>
+  <url><loc>https://skewlux.dev/r6-to-overwatch2-sensitivity</loc><lastmod>2026-11-23</lastmod></url>
+  <url><loc>https://skewlux.dev/r6-to-warzone-sensitivity</loc><lastmod>2026-11-23</lastmod></url>
+  <url><loc>https://skewlux.dev/15-second-typing-test</loc><lastmod>2026-11-23</lastmod></url>
+  <url><loc>https://skewlux.dev/30-second-typing-test</loc><lastmod>2026-11-23</lastmod></url>
+  <url><loc>https://skewlux.dev/60-second-typing-test</loc><lastmod>2026-11-23</lastmod></url>
+  <url><loc>https://skewlux.dev/code-typing-test</loc><lastmod>2026-11-23</lastmod></url>
+  <url><loc>https://skewlux.dev/number-pad-typing-test</loc><lastmod>2026-11-23</lastmod></url>
+  <url><loc>https://skewlux.dev/guides/human-reaction-time-science</loc><lastmod>2026-11-23</lastmod></url>
+  <url><loc>https://skewlux.dev/guides/mouse-sensitivity-edpi-cm360</loc><lastmod>2026-11-23</lastmod></url>
+  <url><loc>https://skewlux.dev/guides/typing-speed-wpm-accuracy</loc><lastmod>2026-11-23</lastmod></url>
+  <url><loc>https://skewlux.dev/guides/mouse-polling-rate-input-lag</loc><lastmod>2026-11-23</lastmod></url>
   <url><loc>https://skewlux.dev/about</loc><lastmod>2026-11-23</lastmod></url>
   <url><loc>https://skewlux.dev/contact</loc><lastmod>2026-11-23</lastmod></url>
   <url><loc>https://skewlux.dev/privacy</loc><lastmod>2026-11-23</lastmod></url>
