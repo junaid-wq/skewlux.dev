@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SkewLux.dev — CSS Layered Box-Shadow Generator &amp; Developer UI Studios</title>
+  <meta name="description" content="Generate smooth multi-layered CSS box shadows, SVG wave dividers, glassmorphism cards, and formatted JSON locally in your browser." />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <link rel="canonical" href="https://skewlux.dev/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="SkewLux.dev — CSS Layered Box-Shadow Generator &amp; Developer UI Studios" />
+  <meta property="og:description" content="Generate smooth multi-layered CSS box shadows, SVG wave dividers, glassmorphism cards, and formatted JSON locally in your browser." />
+  <meta property="og:url" content="https://skewlux.dev/" />
+  <meta name="google-adsense-account" content="ca-pub-4317028384309274" />
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4317028384309274" crossorigin="anonymous"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","name":"SkewLux.dev","url":"https://skewlux.dev/"},{"@type":"SoftwareApplication","name":"SkewLux CSS Layered Box-Shadow Generator","url":"https://skewlux.dev/","applicationCategory":"DeveloperApplication","operatingSystem":"Web Browser","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}]}</script>
+</head>
+<body class="bg-[#090d16] text-slate-100 min-h-screen flex flex-col font-sans antialiased selection:bg-indigo-500/30">
+  <header class="border-b border-slate-800/80 bg-[#090d16]/95 backdrop-blur sticky top-0 z-40">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-2.5 font-bold text-lg text-white tracking-tight">
+        <span class="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-500 to-violet-600 flex items-center justify-center text-white font-black shadow-lg shadow-indigo-500/20">S</span>
+        <span>SkewLux<span class="text-indigo-400">.dev</span></span>
+      </a>
+      <nav class="hidden md:flex items-center gap-6 text-sm text-slate-300">
+        <a href="/" class="hover:text-white transition">Shadow Studio</a>
+        <a href="/svg-wave-generator" class="hover:text-white transition">SVG Waves</a>
+        <a href="/glassmorphism-generator" class="hover:text-white transition">Glassmorphism</a>
+        <a href="/json-formatter" class="hover:text-white transition">JSON Formatter</a>
+        <a href="/guides/css-layered-shadows" class="text-indigo-300 hover:text-indigo-200 transition">Guides</a>
+      </nav>
+    </div>
+  </header>
+  <main class="flex-1 max-w-6xl w-full mx-auto px-4 sm:px-6 py-10">
+    <section class="mb-8">
+      <span class="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-indigo-500/15 text-indigo-300 border border-indigo-500/30 mb-3">CSS Visual Engineering Studio</span>
+      <h1 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight mb-3">CSS Layered Box-Shadow &amp; Elevation Generator</h1>
+      <p class="text-slate-300 text-base sm:text-lg max-w-3xl">Design smooth, realistic multi-layered CSS shadows with exponential blur falloff. Export clean Vanilla CSS or Tailwind arbitrary utility classes in one click.</p>
+    </section>
+
+    <section class="grid lg:grid-cols-12 gap-6 mb-14 bg-slate-900/70 border border-slate-800 rounded-2xl p-5 sm:p-6">
+      <div class="lg:col-span-5 space-y-4">
+        <div>
+          <div class="flex justify-between text-xs font-medium text-slate-300 mb-1"><span>Shadow Layers</span><span id="lblLayers">4</span></div>
+          <input id="inLayers" type="range" min="1" max="6" value="4" class="w-full accent-indigo-500" />
+        </div>
+        <div>
+          <div class="flex justify-between text-xs font-medium text-slate-300 mb-1"><span>Vertical Offset (px)</span><span id="lblY">24px</span></div>
+          <input id="inY" type="range" min="2" max="64" value="24" class="w-full accent-indigo-500" />
+        </div>
+        <div>
+          <div class="flex justify-between text-xs font-medium text-slate-300 mb-1"><span>Max Blur Radius (px)</span><span id="lblBlur">48px</span></div>
+          <input id="inBlur" type="range" min="4" max="120" value="48" class="w-full accent-indigo-500" />
+        </div>
+        <div>
+          <div class="flex justify-between text-xs font-medium text-slate-300 mb-1"><span>Shadow Opacity</span><span id="lblAlpha">0.22</span></div>
+          <input id="inAlpha" type="range" min="0.04" max="0.60" step="0.02" value="0.22" class="w-full accent-indigo-500" />
+        </div>
+        <div class="flex items-center justify-between pt-1">
+          <label class="text-xs font-medium text-slate-300">Shadow Tint</label>
+          <div class="flex items-center gap-2">
+            <input id="inColor" type="color" value="#6366f1" class="w-8 h-8 rounded bg-transparent border border-slate-700 cursor-pointer" />
+            <button id="btnLightBg" type="button" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700">Toggle Light Canvas</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="lg:col-span-7 flex flex-col gap-4">
+        <div id="previewStage" class="flex-1 min-h-[230px] rounded-xl bg-[#0d1322] border border-slate-800 flex items-center justify-center p-8 transition-colors">
+          <div id="shadowCard" class="w-56 h-36 rounded-2xl bg-slate-900 border border-slate-700/60 flex flex-col items-center justify-center text-center p-4 transition-all">
+            <div class="text-sm font-bold text-white">Elevation Surface</div>
+            <div id="stageSub" class="text-xs text-slate-400 mt-1">Smooth multi-stop falloff</div>
+          </div>
+        </div>
+        <div class="bg-[#060911] border border-slate-800 rounded-xl p-4">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-xs font-semibold uppercase tracking-wider text-slate-400">Generated CSS &amp; Tailwind</span>
+            <div class="flex gap-2">
+              <button id="copyCss" type="button" class="px-3 py-1 rounded-md bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-semibold">Copy CSS</button>
+              <button id="copyTw" type="button" class="px-3 py-1 rounded-md bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold border border-slate-700">Copy Tailwind</button>
+            </div>
+          </div>
+          <pre id="cssOut" class="text-xs text-emerald-300 overflow-x-auto leading-relaxed font-mono"></pre>
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-14">
+      <h2 class="text-2xl font-bold text-white mb-4">All SkewLux Developer &amp; UI Studios</h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <a href="/" class="p-5 rounded-xl bg-slate-900/80 border border-indigo-500/40">
+          <div class="text-xs font-semibold text-indigo-400 uppercase">CSS Elevation</div>
+          <div class="text-base font-bold text-white mt-1 mb-1">Layered Box-Shadow</div>
+          <p class="text-xs text-slate-400">Multi-stop optical shadows with CSS &amp; Tailwind export.</p>
+        </a>
+        <a href="/svg-wave-generator" class="p-5 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-indigo-500/50 transition">
+          <div class="text-xs font-semibold text-emerald-400 uppercase">Vector Graphics</div>
+          <div class="text-base font-bold text-white mt-1 mb-1">SVG Wave Generator</div>
+          <p class="text-xs text-slate-400">Smooth cubic-bezier section dividers &amp; CSS data URIs.</p>
+        </a>
+        <a href="/glassmorphism-generator" class="p-5 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-indigo-500/50 transition">
+          <div class="text-xs font-semibold text-sky-400 uppercase">Backdrop Filter</div>
+          <div class="text-base font-bold text-white mt-1 mb-1">Glassmorphism Studio</div>
+          <p class="text-xs text-slate-400">Frosted glass blur, saturation, and border highlight code.</p>
+        </a>
+        <a href="/json-formatter" class="p-5 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-indigo-500/50 transition">
+          <div class="text-xs font-semibold text-amber-400 uppercase">Data Workbench</div>
+          <div class="text-base font-bold text-white mt-1 mb-1">JSON Formatter</div>
+          <p class="text-xs text-slate-400">Instant client-side JSON validation, pretty-print, and minify.</p>
+        </a>
+      </div>
+    </section>
+
+    <article class="max-w-4xl space-y-8 text-slate-300 leading-relaxed">
+      <section>
+        <h2 class="text-2xl font-bold text-white mb-3">Why Single-Layer CSS Box Shadows Look Muddy</h2>
+        <p>A default single-declaration <code>box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25)</code> distributes blur uniformly across one bounding box, creating a harsh grey halo around cards and modals. In physical lighting environments, ambient occlusion produces a tight, dark contact shadow directly underneath an elevated surface alongside a wide, low-opacity atmospheric penumbra.</p>
+        <p class="mt-3">Stacking 3 to 6 comma-separated shadow layers with exponentially doubling vertical offsets (<code>2px, 4px, 8px, 16px, 32px</code>) and matching blur radii replicates natural light attenuation while keeping total alpha balanced so dark and light UI themes both remain crisp.</p>
+      </section>
+      <section>
+        <h2 class="text-2xl font-bold text-white mb-3">GPU Compositing &amp; Animation Performance Tips</h2>
+        <p>Animating <code>box-shadow</code> directly inside CSS <code>@keyframes</code> forces the browser to repaint the element's layer on every frame. To maintain locked 60fps or 120fps hover transitions, render the layered shadow on a <code>::after</code> pseudo-element and transition only its <code>opacity</code> and <code>transform</code> properties, which execute strictly on the GPU compositor thread.</p>
+      </section>
+      <section>
+        <h2 class="text-2xl font-bold text-white mb-4">Frequently Asked Questions</h2>
+        <div class="grid md:grid-cols-2 gap-4">
+          <div class="p-5 rounded-xl bg-slate-900/70 border border-slate-800">
+            <h3 class="text-base font-semibold text-white mb-2">How many box-shadow layers should I use in production?</h3>
+            <p class="text-sm text-slate-300">Three to four layers deliver smooth optical depth for standard cards and buttons without measurable paint overhead, while five to six layers work best for large hero modals and floating popovers.</p>
+          </div>
+          <div class="p-5 rounded-xl bg-slate-900/70 border border-slate-800">
+            <h3 class="text-base font-semibold text-white mb-2">How do I use multi-layer shadows in Tailwind CSS?</h3>
+            <p class="text-sm text-slate-300">Paste the generated <code>shadow-[...]</code> arbitrary utility class directly onto any Tailwind element, or register the custom value under <code>theme.extend.boxShadow</code> in your Tailwind configuration.</p>
+          </div>
+        </div>
+      </section>
+    </article>
+
+    <script>
+      (function() {
+        const inLayers = document.getElementById('inLayers');
+        const inY = document.getElementById('inY');
+        const inBlur = document.getElementById('inBlur');
+        const inAlpha = document.getElementById('inAlpha');
+        const inColor = document.getElementById('inColor');
+        const shadowCard = document.getElementById('shadowCard');
+        const cssOut = document.getElementById('cssOut');
+        const previewStage = document.getElementById('previewStage');
+        const stageSub = document.getElementById('stageSub');
+        let lightMode = false;
+        let lastCss = '';
+        let lastTw = '';
+
+        function hexToRgb(hex) {
+          const n = parseInt(hex.slice(1), 16);
+          return [(n >> 16) & 255, (n >> 8) & 255, n & 255];
+        }
+
+        function update() {
+          const layers = parseInt(inLayers.value, 10);
+          const maxY = parseInt(inY.value, 10);
+          const maxBlur = parseInt(inBlur.value, 10);
+          const maxAlpha = parseFloat(inAlpha.value);
+          const [r, g, b] = hexToRgb(inColor.value);
+
+          document.getElementById('lblLayers').textContent = layers;
+          document.getElementById('lblY').textContent = maxY + 'px';
+          document.getElementById('lblBlur').textContent = maxBlur + 'px';
+          document.getElementById('lblAlpha').textContent = maxAlpha.toFixed(2);
+
+          const parts = [];
+          for (let i = 1; i <= layers; i++) {
+            const ratio = Math.pow(i / layers, 1.6);
+            const y = Math.max(1, Math.round(maxY * ratio));
+            const blur = Math.max(2, Math.round(maxBlur * ratio));
+            const alpha = (maxAlpha * (0.45 + 0.55 * (i / layers)) / Math.sqrt(layers)).toFixed(3);
+            parts.push('0px ' + y + 'px ' + blur + 'px rgba(' + r + ', ' + g + ', ' + b + ', ' + alpha + ')');
+          }
+          const val = parts.join(',\n    ');
+          shadowCard.style.boxShadow = parts.join(', ');
+          lastCss = 'box-shadow:\n    ' + val + ';';
+          lastTw = 'shadow-[' + parts.map(p => p.replace(/,\s+/g, ',').replace(/\s+/g, '_')).join(',') + ']';
+          cssOut.textContent = lastCss + '\n\n/* Tailwind Class */\n' + lastTw;
+        }
+
+        document.getElementById('btnLightBg').addEventListener('click', function() {
+          lightMode = !lightMode;
+          previewStage.className = lightMode
+            ? 'flex-1 min-h-[230px] rounded-xl bg-slate-100 border border-slate-300 flex items-center justify-center p-8 transition-colors'
+            : 'flex-1 min-h-[230px] rounded-xl bg-[#0d1322] border border-slate-800 flex items-center justify-center p-8 transition-colors';
+          shadowCard.className = lightMode
+            ? 'w-56 h-36 rounded-2xl bg-white border border-slate-200 flex flex-col items-center justify-center text-center p-4 transition-all text-slate-900'
+            : 'w-56 h-36 rounded-2xl bg-slate-900 border border-slate-700/60 flex flex-col items-center justify-center text-center p-4 transition-all text-white';
+          shadowCard.querySelector('div').className = lightMode ? 'text-sm font-bold text-slate-900' : 'text-sm font-bold text-white';
+          stageSub.className = lightMode ? 'text-xs text-slate-500 mt-1' : 'text-xs text-slate-400 mt-1';
+        });
+
+        function flashBtn(btn, text) {
+          const orig = btn.textContent;
+          btn.textContent = text;
+          setTimeout(() => btn.textContent = orig, 1400);
+        }
+
+        document.getElementById('copyCss').addEventListener('click', function() {
+          navigator.clipboard.writeText(lastCss);
+          flashBtn(this, 'Copied CSS!');
+        });
+        document.getElementById('copyTw').addEventListener('click', function() {
+          navigator.clipboard.writeText(lastTw);
+          flashBtn(this, 'Copied Tailwind!');
+        });
+
+        [inLayers, inY, inBlur, inAlpha, inColor].forEach(el => el.addEventListener('input', update));
+        update();
+      })();
+    </script>
+  </main>
+  <footer class="border-t border-slate-800/80 py-10 text-xs text-slate-400 mt-16">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 grid sm:grid-cols-3 gap-8">
+      <div>
+        <div class="font-bold text-white text-sm mb-2">SkewLux.dev</div>
+        <p class="leading-relaxed text-slate-400">Client-side CSS, SVG, and developer utilities built for zero-latency browser workflows and clean production code.</p>
+      </div>
+      <div>
+        <div class="font-semibold text-slate-200 mb-2">Interactive Studios</div>
+        <ul class="space-y-1.5">
+          <li><a href="/" class="hover:text-white">CSS Layered Box-Shadow Studio</a></li>
+          <li><a href="/svg-wave-generator" class="hover:text-white">Multi-Layer SVG Wave Generator</a></li>
+          <li><a href="/glassmorphism-generator" class="hover:text-white">Glassmorphism Card Generator</a></li>
+          <li><a href="/json-formatter" class="hover:text-white">JSON Formatter &amp; Validator</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="font-semibold text-slate-200 mb-2">Engineering &amp; Policies</div>
+        <ul class="space-y-1.5">
+          <li><a href="/guides/css-layered-shadows" class="hover:text-white">CSS Shadow Layering Guide</a></li>
+          <li><a href="/guides/svg-waves-data-uri" class="hover:text-white">SVG Waves &amp; Data URI Guide</a></li>
+          <li><a href="/about" class="hover:text-white">About SkewLux</a> &middot; <a href="/contact" class="hover:text-white">Contact</a></li>
+          <li><a href="/privacy" class="hover:text-white">Privacy Policy</a> &middot; <a href="/terms" class="hover:text-white">Terms of Use</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

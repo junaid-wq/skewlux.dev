@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SVG Wave &amp; Section Divider Generator | SkewLux.dev</title>
+  <meta name="description" content="Generate smooth multi-layer SVG waves and CSS background-image data URIs with customizable peaks, amplitude, and opacity." />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <link rel="canonical" href="https://skewlux.dev/svg-wave-generator" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="SVG Wave &amp; Section Divider Generator | SkewLux.dev" />
+  <meta property="og:description" content="Generate smooth multi-layer SVG waves and CSS background-image data URIs with customizable peaks, amplitude, and opacity." />
+  <meta property="og:url" content="https://skewlux.dev/svg-wave-generator" />
+  <meta name="google-adsense-account" content="ca-pub-4317028384309274" />
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4317028384309274" crossorigin="anonymous"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"SkewLux SVG Wave Generator","url":"https://skewlux.dev/svg-wave-generator","applicationCategory":"DesignApplication","operatingSystem":"Web Browser","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+</head>
+<body class="bg-[#090d16] text-slate-100 min-h-screen flex flex-col font-sans antialiased selection:bg-indigo-500/30">
+  <header class="border-b border-slate-800/80 bg-[#090d16]/95 backdrop-blur sticky top-0 z-40">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-2.5 font-bold text-lg text-white tracking-tight">
+        <span class="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-500 to-violet-600 flex items-center justify-center text-white font-black shadow-lg shadow-indigo-500/20">S</span>
+        <span>SkewLux<span class="text-indigo-400">.dev</span></span>
+      </a>
+      <nav class="hidden md:flex items-center gap-6 text-sm text-slate-300">
+        <a href="/" class="hover:text-white transition">Shadow Studio</a>
+        <a href="/svg-wave-generator" class="hover:text-white transition">SVG Waves</a>
+        <a href="/glassmorphism-generator" class="hover:text-white transition">Glassmorphism</a>
+        <a href="/json-formatter" class="hover:text-white transition">JSON Formatter</a>
+        <a href="/guides/css-layered-shadows" class="text-indigo-300 hover:text-indigo-200 transition">Guides</a>
+      </nav>
+    </div>
+  </header>
+  <main class="flex-1 max-w-6xl w-full mx-auto px-4 sm:px-6 py-10">
+    <section class="mb-8">
+      <span class="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-emerald-500/15 text-emerald-300 border border-emerald-500/30 mb-3">Vector Section Divider Studio</span>
+      <h1 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-3">Multi-Layer SVG Wave &amp; Section Divider Generator</h1>
+      <p class="text-slate-300 text-base max-w-3xl">Generate crisp, resolution-independent cubic-bezier SVG waves for landing page hero transitions. Copy raw <code>&lt;svg&gt;</code> markup or an inline CSS <code>background-image</code> data URI.</p>
+    </section>
+
+    <section class="grid lg:grid-cols-12 gap-6 mb-14 bg-slate-900/70 border border-slate-800 rounded-2xl p-5 sm:p-6">
+      <div class="lg:col-span-4 space-y-4">
+        <div>
+          <div class="flex justify-between text-xs font-medium text-slate-300 mb-1"><span>Wave Peaks</span><span id="wPeaksLbl">3</span></div>
+          <input id="wPeaks" type="range" min="1" max="8" value="3" class="w-full accent-emerald-500" />
+        </div>
+        <div>
+          <div class="flex justify-between text-xs font-medium text-slate-300 mb-1"><span>Wave Amplitude</span><span id="wAmpLbl">55</span></div>
+          <input id="wAmp" type="range" min="15" max="110" value="55" class="w-full accent-emerald-500" />
+        </div>
+        <div>
+          <div class="flex justify-between text-xs font-medium text-slate-300 mb-1"><span>Stacked Layers</span><span id="wLayersLbl">2</span></div>
+          <input id="wLayers" type="range" min="1" max="4" value="2" class="w-full accent-emerald-500" />
+        </div>
+        <div class="flex items-center justify-between pt-2">
+          <label class="text-xs font-medium text-slate-300">Primary Fill</label>
+          <div class="flex gap-2">
+            <input id="wColor" type="color" value="#6366f1" class="w-8 h-8 rounded bg-transparent border border-slate-700 cursor-pointer" />
+            <button id="wRandom" type="button" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700">Randomize Seed</button>
+          </div>
+        </div>
+      </div>
+      <div class="lg:col-span-8 flex flex-col gap-4">
+        <div id="wStage" class="rounded-xl overflow-hidden border border-slate-800 bg-[#0d1322] min-h-[220px] flex flex-col justify-end"></div>
+        <div class="bg-[#060911] border border-slate-800 rounded-xl p-4">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-xs font-semibold uppercase tracking-wider text-slate-400">Clean SVG Markup</span>
+            <div class="flex gap-2">
+              <button id="wCopySvg" type="button" class="px-3 py-1 rounded-md bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-semibold">Copy &lt;svg&gt;</button>
+              <button id="wCopyCss" type="button" class="px-3 py-1 rounded-md bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold border border-slate-700">Copy CSS Data URI</button>
+            </div>
+          </div>
+          <pre id="wOut" class="text-xs text-emerald-300 overflow-x-auto max-h-36 font-mono"></pre>
+        </div>
+      </div>
+    </section>
+
+    <article class="max-w-4xl space-y-6 text-slate-300 leading-relaxed">
+      <h2 class="text-2xl font-bold text-white">Responsive SVG Wave Scaling Without Distortion</h2>
+      <p>Every generated wave includes <code>viewBox="0 0 1440 240"</code> and <code>preserveAspectRatio="none"</code>, allowing the divider to span ultrawide 4K monitors and narrow mobile viewports seamlessly without horizontal scrollbars or pixelation. Using an encoded CSS data URI avoids extra HTTP requests while keeping your HTML component templates clean.</p>
+    </article>
+
+    <script>
+      (function() {
+        const wPeaks = document.getElementById('wPeaks');
+        const wAmp = document.getElementById('wAmp');
+        const wLayers = document.getElementById('wLayers');
+        const wColor = document.getElementById('wColor');
+        const wStage = document.getElementById('wStage');
+        const wOut = document.getElementById('wOut');
+        let seed = 17;
+        let currentSvg = '';
+
+        function pseudoRand(i) {
+          const x = Math.sin(seed * 9301 + i * 49297) * 233280;
+          return x - Math.floor(x);
+        }
+
+        function buildWave() {
+          const peaks = parseInt(wPeaks.value, 10);
+          const amp = parseInt(wAmp.value, 10);
+          const layers = parseInt(wLayers.value, 10);
+          const color = wColor.value;
+          document.getElementById('wPeaksLbl').textContent = peaks;
+          document.getElementById('wAmpLbl').textContent = amp;
+          document.getElementById('wLayersLbl').textContent = layers;
+
+          const width = 1440;
+          const height = 240;
+          let paths = '';
+          for (let l = 0; l < layers; l++) {
+            const baseY = 110 + l * 18;
+            const opacity = l === layers - 1 ? '1' : (0.28 + l * 0.22).toFixed(2);
+            const step = width / peaks;
+            let d = 'M0,' + baseY;
+            for (let p = 0; p < peaks; p++) {
+              const x1 = Math.round(p * step + step * 0.35);
+              const x2 = Math.round(p * step + step * 0.65);
+              const xEnd = Math.round((p + 1) * step);
+              const dir = (p + l) % 2 === 0 ? -1 : 1;
+              const offset = Math.round(amp * (0.7 + 0.5 * pseudoRand(l * 13 + p)) * dir);
+              const yMid = Math.max(20, Math.min(210, baseY + offset));
+              d += ' C' + x1 + ',' + yMid + ' ' + x2 + ',' + yMid + ' ' + xEnd + ',' + baseY;
+            }
+            d += ' L1440,240 L0,240 Z';
+            paths += '\n  <path fill="' + color + '" fill-opacity="' + opacity + '" d="' + d + '"></path>';
+          }
+          currentSvg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 240" preserveAspectRatio="none">' + paths + '\n</svg>';
+          wStage.innerHTML = currentSvg;
+          wOut.textContent = currentSvg;
+        }
+
+        document.getElementById('wRandom').addEventListener('click', function() { seed += 7; buildWave(); });
+        document.getElementById('wCopySvg').addEventListener('click', function() {
+          navigator.clipboard.writeText(currentSvg);
+          this.textContent = 'Copied SVG!';
+          setTimeout(() => this.textContent = 'Copy <svg>', 1400);
+        });
+        document.getElementById('wCopyCss').addEventListener('click', function() {
+          const uri = 'background-image: url("data:image/svg+xml,' + encodeURIComponent(currentSvg) + '");\nbackground-size: 100% 100%;\nbackground-repeat: no-repeat;';
+          navigator.clipboard.writeText(uri);
+          this.textContent = 'Copied CSS URI!';
+          setTimeout(() => this.textContent = 'Copy CSS Data URI', 1400);
+        });
+        [wPeaks, wAmp, wLayers, wColor].forEach(el => el.addEventListener('input', buildWave));
+        buildWave();
+      })();
+    </script>
+  </main>
+  <footer class="border-t border-slate-800/80 py-10 text-xs text-slate-400 mt-16">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 grid sm:grid-cols-3 gap-8">
+      <div>
+        <div class="font-bold text-white text-sm mb-2">SkewLux.dev</div>
+        <p class="leading-relaxed text-slate-400">Client-side CSS, SVG, and developer utilities built for zero-latency browser workflows and clean production code.</p>
+      </div>
+      <div>
+        <div class="font-semibold text-slate-200 mb-2">Interactive Studios</div>
+        <ul class="space-y-1.5">
+          <li><a href="/" class="hover:text-white">CSS Layered Box-Shadow Studio</a></li>
+          <li><a href="/svg-wave-generator" class="hover:text-white">Multi-Layer SVG Wave Generator</a></li>
+          <li><a href="/glassmorphism-generator" class="hover:text-white">Glassmorphism Card Generator</a></li>
+          <li><a href="/json-formatter" class="hover:text-white">JSON Formatter &amp; Validator</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="font-semibold text-slate-200 mb-2">Engineering &amp; Policies</div>
+        <ul class="space-y-1.5">
+          <li><a href="/guides/css-layered-shadows" class="hover:text-white">CSS Shadow Layering Guide</a></li>
+          <li><a href="/guides/svg-waves-data-uri" class="hover:text-white">SVG Waves &amp; Data URI Guide</a></li>
+          <li><a href="/about" class="hover:text-white">About SkewLux</a> &middot; <a href="/contact" class="hover:text-white">Contact</a></li>
+          <li><a href="/privacy" class="hover:text-white">Privacy Policy</a> &middot; <a href="/terms" class="hover:text-white">Terms of Use</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
