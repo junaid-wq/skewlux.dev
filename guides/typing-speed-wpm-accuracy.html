@@ -20,19 +20,28 @@
   <header class="border-b border-slate-800/80 bg-[#090d16]/95 backdrop-blur sticky top-0 z-40">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
       <a href="/" class="flex items-center gap-2.5 font-bold text-lg text-white tracking-tight">
-        <span class="w-8 h-8 rounded-lg bg-gradient-to-br from-emerald-500 to-indigo-600 flex items-center justify-center text-white font-black shadow-lg shadow-emerald-500/20">S</span>
+        <span class="w-8 h-8 rounded-lg bg-gradient-to-br from-emerald-500 to-indigo-600 flex items-center justify-center text-white font-black shadow-lg shadow-emerald-500/20">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path stroke-linecap="round" stroke-linejoin="round" d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        </span>
         <span>SkewLux<span class="text-emerald-400">.dev</span></span>
       </a>
-      <nav class="hidden md:flex items-center gap-6 text-sm text-slate-300">
+      <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-300">
         <a href="/" class="hover:text-white transition">Reaction Test</a>
         <a href="/typing-test" class="hover:text-white transition">Typing Speed</a>
         <a href="/sensitivity-converter" class="hover:text-white transition">Sens Converter</a>
         <a href="/cps-polling-test" class="hover:text-white transition">CPS &amp; Hz Test</a>
-        <a href="/guides/human-reaction-time-science" class="text-emerald-300 hover:text-emerald-200 transition">Guides</a>
+        <a href="/guides/human-reaction-time-science" class="text-emerald-400 hover:text-emerald-300 transition">Guides</a>
       </nav>
     </div>
+    <nav class="md:hidden flex items-center gap-4 overflow-x-auto px-4 py-2.5 border-t border-slate-800/70 text-xs font-medium text-slate-300 whitespace-nowrap bg-[#070a12]">
+      <a href="/" class="hover:text-white">Reaction</a>
+      <a href="/typing-test" class="hover:text-white">Typing WPM</a>
+      <a href="/sensitivity-converter" class="hover:text-white">Sens Converter</a>
+      <a href="/cps-polling-test" class="hover:text-white">CPS &amp; Hz</a>
+      <a href="/guides/human-reaction-time-science" class="text-emerald-400">Guides</a>
+    </nav>
   </header>
-  <main class="flex-1 max-w-6xl w-full mx-auto px-4 sm:px-6 py-10">
+  <main class="flex-1 max-w-6xl w-full mx-auto px-4 sm:px-6 py-8 sm:py-10">
     <article class="max-w-3xl mx-auto">
       <span class="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-emerald-500/15 text-emerald-300 border border-emerald-500/30 mb-3">Keyboard Ergonomics & Speed</span>
       <h1 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight leading-tight mb-5">How to Increase Typing Speed Past 100 WPM Without Sacrificing Accuracy</h1>
@@ -55,14 +64,14 @@
       </div>
     </article>
   </main>
-  <footer class="border-t border-slate-800/80 py-10 text-xs text-slate-400 mt-16">
+  <footer class="border-t border-slate-800/80 py-10 text-xs text-slate-400 mt-16 bg-[#070a12]">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 grid sm:grid-cols-4 gap-8">
       <div>
         <div class="font-bold text-white text-sm mb-2">SkewLux.dev</div>
-        <p class="leading-relaxed text-slate-400">Zero-latency browser benchmarks for reaction time, WPM typing speed, cross-game mouse sensitivity, and peripheral polling rates.</p>
+        <p class="leading-relaxed text-slate-400">Zero-latency browser benchmarks for visual reaction time, WPM typing speed, cross-game sensitivity, and USB mouse polling rates.</p>
       </div>
       <div>
-        <div class="font-semibold text-slate-200 mb-2">Benchmark Studios</div>
+        <div class="font-semibold text-slate-200 mb-2">Interactive Benchmarks</div>
         <ul class="space-y-1.5">
           <li><a href="/" class="hover:text-white">Visual Reaction Time Test</a></li>
           <li><a href="/typing-test" class="hover:text-white">WPM &amp; Code Typing Test</a></li>

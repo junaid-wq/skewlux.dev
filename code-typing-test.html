@@ -19,49 +19,69 @@
   <header class="border-b border-slate-800/80 bg-[#090d16]/95 backdrop-blur sticky top-0 z-40">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
       <a href="/" class="flex items-center gap-2.5 font-bold text-lg text-white tracking-tight">
-        <span class="w-8 h-8 rounded-lg bg-gradient-to-br from-emerald-500 to-indigo-600 flex items-center justify-center text-white font-black shadow-lg shadow-emerald-500/20">S</span>
+        <span class="w-8 h-8 rounded-lg bg-gradient-to-br from-emerald-500 to-indigo-600 flex items-center justify-center text-white font-black shadow-lg shadow-emerald-500/20">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path stroke-linecap="round" stroke-linejoin="round" d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        </span>
         <span>SkewLux<span class="text-emerald-400">.dev</span></span>
       </a>
-      <nav class="hidden md:flex items-center gap-6 text-sm text-slate-300">
+      <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-300">
         <a href="/" class="hover:text-white transition">Reaction Test</a>
         <a href="/typing-test" class="hover:text-white transition">Typing Speed</a>
         <a href="/sensitivity-converter" class="hover:text-white transition">Sens Converter</a>
         <a href="/cps-polling-test" class="hover:text-white transition">CPS &amp; Hz Test</a>
-        <a href="/guides/human-reaction-time-science" class="text-emerald-300 hover:text-emerald-200 transition">Guides</a>
+        <a href="/guides/human-reaction-time-science" class="text-emerald-400 hover:text-emerald-300 transition">Guides</a>
       </nav>
     </div>
+    <nav class="md:hidden flex items-center gap-4 overflow-x-auto px-4 py-2.5 border-t border-slate-800/70 text-xs font-medium text-slate-300 whitespace-nowrap bg-[#070a12]">
+      <a href="/" class="hover:text-white">Reaction</a>
+      <a href="/typing-test" class="hover:text-white">Typing WPM</a>
+      <a href="/sensitivity-converter" class="hover:text-white">Sens Converter</a>
+      <a href="/cps-polling-test" class="hover:text-white">CPS &amp; Hz</a>
+      <a href="/guides/human-reaction-time-science" class="text-emerald-400">Guides</a>
+    </nav>
   </header>
-  <main class="flex-1 max-w-6xl w-full mx-auto px-4 sm:px-6 py-10">
+  <main class="flex-1 max-w-6xl w-full mx-auto px-4 sm:px-6 py-8 sm:py-10">
     <section class="mb-6 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
       <div>
         <span class="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-indigo-500/15 text-indigo-300 border border-indigo-500/30 mb-2">Keyboard Speed &amp; Accuracy Lab</span>
         <h1 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">Programmer Code Typing Test (JavaScript &amp; Python WPM)</h1>
         <p class="text-slate-300 text-sm sm:text-base mt-2 max-w-2xl">Practice typing brackets, operators, camelCase, and syntax keywords with our developer code WPM test.</p>
       </div>
-      <div class="flex gap-3 text-xs">
-        <div class="px-4 py-2 rounded-xl bg-slate-900 border border-slate-800"><span class="text-slate-400 block">Time</span><strong id="tpTime" class="text-amber-400 text-lg">60s</strong></div>
-        <div class="px-4 py-2 rounded-xl bg-slate-900 border border-slate-800"><span class="text-slate-400 block">Live WPM</span><strong id="tpWpm" class="text-emerald-400 text-lg">0</strong></div>
-        <div class="px-4 py-2 rounded-xl bg-slate-900 border border-slate-800"><span class="text-slate-400 block">Accuracy</span><strong id="tpAcc" class="text-indigo-400 text-lg">100%</strong></div>
+      <div class="flex flex-wrap gap-2.5 text-xs">
+        <div class="px-3.5 py-2 rounded-xl bg-slate-900 border border-slate-800"><span class="text-slate-400 block">Time</span><strong id="tpTime" class="text-amber-400 text-lg font-mono">60s</strong></div>
+        <div class="px-3.5 py-2 rounded-xl bg-slate-900 border border-slate-800"><span class="text-slate-400 block">Live WPM</span><strong id="tpWpm" class="text-emerald-400 text-lg font-mono">0</strong></div>
+        <div class="px-3.5 py-2 rounded-xl bg-slate-900 border border-slate-800"><span class="text-slate-400 block">Accuracy</span><strong id="tpAcc" class="text-indigo-400 text-lg font-mono">100%</strong></div>
+        <div class="px-3.5 py-2 rounded-xl bg-slate-900 border border-slate-800"><span class="text-slate-400 block">Best WPM</span><strong id="tpBest" class="text-white text-lg font-mono">--</strong></div>
       </div>
     </section>
 
     <section class="bg-slate-900/75 border border-slate-800 rounded-2xl p-5 sm:p-6 mb-12 space-y-5">
       <div class="flex flex-wrap items-center justify-between gap-3">
-        <div class="flex flex-wrap gap-2 text-xs">
+        <div class="flex flex-wrap items-center gap-2 text-xs">
           <button data-sec="15" class="tp-sec px-3 py-1.5 rounded-lg bg-slate-800 text-slate-200 border border-slate-700 font-semibold">15s</button>
           <button data-sec="30" class="tp-sec px-3 py-1.5 rounded-lg bg-slate-800 text-slate-200 border border-slate-700 font-semibold">30s</button>
           <button data-sec="60" class="tp-sec px-3 py-1.5 rounded-lg bg-slate-800 text-slate-200 border border-slate-700 font-semibold">60s</button>
-          <span class="border-l border-slate-700 mx-1"></span>
+          <span class="border-l border-slate-700 h-5 mx-1"></span>
           <button data-mode="words" class="tp-mode px-3 py-1.5 rounded-lg bg-slate-800 text-slate-200 border border-slate-700 font-semibold">English Words</button>
           <button data-mode="code" class="tp-mode px-3 py-1.5 rounded-lg bg-slate-800 text-slate-200 border border-slate-700 font-semibold">JS / Python Code</button>
           <button data-mode="numbers" class="tp-mode px-3 py-1.5 rounded-lg bg-slate-800 text-slate-200 border border-slate-700 font-semibold">Numbers &amp; Symbols</button>
         </div>
-        <button id="tpRestart" type="button" class="px-4 py-1.5 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-semibold">Restart Test</button>
+        <div class="flex items-center gap-3">
+          <label class="inline-flex items-center gap-1.5 text-xs text-slate-400 cursor-pointer select-none">
+            <input id="tpSound" type="checkbox" checked class="accent-indigo-500 rounded" />
+            <span>Key Click</span>
+          </label>
+          <button id="tpRestart" type="button" class="px-4 py-1.5 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-semibold">Restart (Tab)</button>
+        </div>
       </div>
 
-      <div id="tpPrompt" class="p-5 rounded-xl bg-[#060911] border border-slate-800 font-mono text-lg sm:text-xl leading-relaxed tracking-wide select-none"></div>
-      <input id="tpInput" type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Start typing here to begin countdown..." class="w-full px-4 py-3.5 rounded-xl bg-slate-950 border border-indigo-500/40 focus:border-emerald-400 focus:outline-none font-mono text-base text-white" />
-      <div id="tpResult" class="hidden p-4 rounded-xl bg-emerald-950/60 border border-emerald-500/40 text-sm text-emerald-200 flex flex-wrap items-center justify-between gap-3"></div>
+      <div id="tpArena" class="relative p-5 sm:p-6 rounded-2xl bg-[#060911] border-2 border-slate-800 focus-within:border-indigo-500/60 cursor-text transition-colors">
+        <div id="tpFocusHint" class="text-[11px] uppercase tracking-wider text-indigo-400 font-semibold mb-3">Click here and start typing — timer starts on your first keystroke</div>
+        <div id="tpPrompt" class="font-mono text-lg sm:text-2xl leading-relaxed flex flex-wrap gap-x-3 gap-y-2 select-none"></div>
+        <input id="tpInput" type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" aria-label="Typing input" class="opacity-0 absolute inset-0 w-full h-full cursor-text" />
+      </div>
+
+      <div id="tpResult" class="hidden p-5 rounded-2xl bg-gradient-to-r from-emerald-950/80 to-slate-900 border border-emerald-500/40 flex flex-wrap items-center justify-between gap-4"></div>
     </section>
 
     <article class="max-w-4xl space-y-6 text-slate-300 leading-relaxed">
@@ -71,24 +91,45 @@
     <script>
       (function() {
         const banks = {
-          words: "the quick brown fox jumps over lazy dog system network latency browser frame keyboard speed accuracy rhythm focus steady flow practice modern cloud server packet route signal client render pixel buffer memory cache thread async await promise function return value const let array object string number boolean index query state",
+          words: "the quick brown fox jumps over lazy dog system network latency browser frame keyboard speed accuracy rhythm focus steady flow practice modern cloud server packet route signal client render pixel buffer memory cache thread async await promise function return value const let array object string number boolean index query state design clean fast build scale deploy",
           code: "const fetchMetrics = async (url) => { const res = await fetch(url); if (!res.ok) throw new Error('HTTP_' + res.status); return await res.json(); }; function clamp(val, min, max) { return Math.min(max, Math.max(min, val)); } for (let i = 0; i < items.length; i++) { total += items[i].score; }",
           numbers: "1024 4096 8192 144Hz 240Hz 360Hz 1920x1080 3840x2160 127.0.0.1 192.168.1.1 8080 443 99.95% 0.022 0.070 800dpi 1600dpi 45.5cm 2026 3.14159 65535 1000Hz 256bit 512MB 16GB"
         };
         let duration = 60;
         let mode = 'code';
+        let targetWords = [];
         let targetText = '';
-        let timeLeft = duration;
         let started = false;
         let finished = false;
         let interval = null;
+        let bestWpm = parseInt(localStorage.getItem('sl_tp_best') || '0', 10);
 
         const promptEl = document.getElementById('tpPrompt');
         const inputEl = document.getElementById('tpInput');
         const timeEl = document.getElementById('tpTime');
         const wpmEl = document.getElementById('tpWpm');
         const accEl = document.getElementById('tpAcc');
+        const bestEl = document.getElementById('tpBest');
         const resEl = document.getElementById('tpResult');
+        const hintEl = document.getElementById('tpFocusHint');
+        const soundChk = document.getElementById('tpSound');
+
+        if (bestWpm > 0) bestEl.textContent = bestWpm;
+
+        function clickTick() {
+          if (!soundChk.checked) return;
+          try {
+            const ctx = new (window.AudioContext || window.webkitAudioContext)();
+            const osc = ctx.createOscillator();
+            const gain = ctx.createGain();
+            osc.type = 'triangle';
+            osc.frequency.value = 320 + Math.random() * 80;
+            gain.gain.setValueAtTime(0.035, ctx.currentTime);
+            gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.025);
+            osc.connect(gain); gain.connect(ctx.destination);
+            osc.start(); osc.stop(ctx.currentTime + 0.025);
+          } catch (e) {}
+        }
 
         function highlightButtons() {
           document.querySelectorAll('.tp-sec').forEach(b => {
@@ -105,30 +146,49 @@
 
         function generateText() {
           const pool = banks[mode].split(' ');
-          const out = [];
-          for (let i = 0; i < 65; i++) {
-            out.push(pool[Math.floor(Math.random() * pool.length)]);
+          targetWords = [];
+          for (let i = 0; i < 42; i++) {
+            targetWords.push(pool[Math.floor(Math.random() * pool.length)]);
           }
-          targetText = out.join(' ');
+          targetText = targetWords.join(' ');
+        }
+
+        function esc(ch) {
+          return ch.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
         }
 
         function renderPrompt() {
           const typed = inputEl.value;
+          let globalIdx = 0;
           let html = '';
-          const showLen = Math.min(targetText.length, Math.max(160, typed.length + 90));
-          for (let i = 0; i < showLen; i++) {
-            const ch = targetText[i] === ' ' ? '&nbsp;' : targetText[i].replace(/</g, '&lt;').replace(/>/g, '&gt;');
-            if (i < typed.length) {
-              if (typed[i] === targetText[i]) {
-                html += '<span class="text-emerald-400">' + ch + '</span>';
+          for (let w = 0; w < targetWords.length; w++) {
+            const word = targetWords[w];
+            let wordHtml = '';
+            for (let c = 0; c < word.length; c++) {
+              const ch = esc(word[c]);
+              if (globalIdx < typed.length) {
+                if (typed[globalIdx] === targetText[globalIdx]) {
+                  wordHtml += '<span class="text-emerald-400">' + ch + '</span>';
+                } else {
+                  wordHtml += '<span class="bg-rose-500/40 text-rose-200 rounded px-0.5">' + ch + '</span>';
+                }
+              } else if (globalIdx === typed.length) {
+                wordHtml += '<span class="border-l-2 border-emerald-400 text-white bg-indigo-500/15">' + ch + '</span>';
               } else {
-                html += '<span class="bg-rose-500/40 text-rose-200 rounded">' + ch + '</span>';
+                wordHtml += '<span class="text-slate-500">' + ch + '</span>';
               }
-            } else if (i === typed.length) {
-              html += '<span class="border-b-2 border-emerald-400 text-white">' + ch + '</span>';
-            } else {
-              html += '<span class="text-slate-500">' + ch + '</span>';
+              globalIdx++;
             }
+            // Account for space after word
+            if (w < targetWords.length - 1) {
+              if (globalIdx === typed.length) {
+                wordHtml += '<span class="border-l-2 border-emerald-400">&nbsp;</span>';
+              } else if (globalIdx < typed.length && typed[globalIdx] !== ' ') {
+                wordHtml += '<span class="bg-rose-500/40 text-rose-200 rounded">&middot;</span>';
+              }
+              globalIdx++;
+            }
+            html += '<span class="inline-flex">' + wordHtml + '</span>';
           }
           promptEl.innerHTML = html;
         }
@@ -137,13 +197,13 @@
           clearInterval(interval);
           started = false;
           finished = false;
-          timeLeft = duration;
           timeEl.textContent = duration + 's';
           wpmEl.textContent = '0';
           accEl.textContent = '100%';
           inputEl.value = '';
           inputEl.disabled = false;
           resEl.classList.add('hidden');
+          hintEl.textContent = 'Click here and start typing — timer starts on your first keystroke';
           generateText();
           renderPrompt();
           highlightButtons();
@@ -154,27 +214,35 @@
           clearInterval(interval);
           inputEl.disabled = true;
           const typed = inputEl.value;
-          let correct = 0;
+          let correct = 0, errors = 0;
           for (let i = 0; i < typed.length; i++) {
-            if (typed[i] === targetText[i]) correct++;
+            if (typed[i] === targetText[i]) correct++; else errors++;
           }
           const mins = duration / 60;
-          const wpm = Math.round((correct / 5) / mins);
+          const netWpm = Math.round((correct / 5) / mins);
+          const rawWpm = Math.round((typed.length / 5) / mins);
           const acc = typed.length ? Math.round((correct / typed.length) * 100) : 100;
-          wpmEl.textContent = wpm;
+          wpmEl.textContent = netWpm;
           accEl.textContent = acc + '%';
-          resEl.innerHTML = '<span><strong>Test Complete:</strong> ' + wpm + ' WPM at ' + acc + '% accuracy (' + duration + 's ' + mode + ')</span><button id="tpCopyRes" class="px-3 py-1 rounded bg-emerald-600 text-white text-xs font-semibold">Copy Score</button>';
+          if (netWpm > bestWpm) {
+            bestWpm = netWpm;
+            localStorage.setItem('sl_tp_best', String(bestWpm));
+            bestEl.textContent = bestWpm;
+          }
+          resEl.innerHTML = '<div class="space-y-1"><div class="text-base font-bold text-white">Result: <span class="text-emerald-400">' + netWpm + ' Net WPM</span> &middot; ' + acc + '% Accuracy</div><div class="text-xs text-slate-300">Raw Speed: ' + rawWpm + ' WPM | Correct Chars: ' + correct + ' | Errors: ' + errors + '</div></div><button id="tpCopyRes" class="px-4 py-2 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-semibold">Copy Score</button>';
           resEl.classList.remove('hidden');
           document.getElementById('tpCopyRes').addEventListener('click', function() {
-            navigator.clipboard.writeText('SkewLux.dev Typing Speed: ' + wpm + ' WPM (' + acc + '% accuracy) — https://skewlux.dev/typing-test');
+            navigator.clipboard.writeText('SkewLux.dev Typing Speed: ' + netWpm + ' WPM (' + acc + '% accuracy) — https://skewlux.dev/typing-test');
             this.textContent = 'Copied!';
           });
         }
 
         inputEl.addEventListener('input', () => {
           if (finished) return;
+          clickTick();
           if (!started) {
             started = true;
+            hintEl.textContent = 'Typing live... keep your rhythm steady!';
             const t0 = performance.now();
             interval = setInterval(() => {
               const elapsed = (performance.now() - t0) / 1000;
@@ -189,7 +257,15 @@
               if (elapsed >= duration) finish();
             }, 100);
           }
+          if (inputEl.value.length >= targetText.length - 10) {
+            generateText();
+            inputEl.value = '';
+          }
           renderPrompt();
+        });
+
+        inputEl.addEventListener('keydown', (e) => {
+          if (e.key === 'Tab') { e.preventDefault(); reset(); }
         });
 
         document.querySelectorAll('.tp-sec').forEach(b => b.addEventListener('click', () => { duration = parseInt(b.dataset.sec, 10); reset(); inputEl.focus(); }));
@@ -199,14 +275,14 @@
       })();
     </script>
   </main>
-  <footer class="border-t border-slate-800/80 py-10 text-xs text-slate-400 mt-16">
+  <footer class="border-t border-slate-800/80 py-10 text-xs text-slate-400 mt-16 bg-[#070a12]">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 grid sm:grid-cols-4 gap-8">
       <div>
         <div class="font-bold text-white text-sm mb-2">SkewLux.dev</div>
-        <p class="leading-relaxed text-slate-400">Zero-latency browser benchmarks for reaction time, WPM typing speed, cross-game mouse sensitivity, and peripheral polling rates.</p>
+        <p class="leading-relaxed text-slate-400">Zero-latency browser benchmarks for visual reaction time, WPM typing speed, cross-game sensitivity, and USB mouse polling rates.</p>
       </div>
       <div>
-        <div class="font-semibold text-slate-200 mb-2">Benchmark Studios</div>
+        <div class="font-semibold text-slate-200 mb-2">Interactive Benchmarks</div>
         <ul class="space-y-1.5">
           <li><a href="/" class="hover:text-white">Visual Reaction Time Test</a></li>
           <li><a href="/typing-test" class="hover:text-white">WPM &amp; Code Typing Test</a></li>

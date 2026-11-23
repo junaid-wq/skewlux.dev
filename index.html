@@ -20,42 +20,81 @@
   <header class="border-b border-slate-800/80 bg-[#090d16]/95 backdrop-blur sticky top-0 z-40">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
       <a href="/" class="flex items-center gap-2.5 font-bold text-lg text-white tracking-tight">
-        <span class="w-8 h-8 rounded-lg bg-gradient-to-br from-emerald-500 to-indigo-600 flex items-center justify-center text-white font-black shadow-lg shadow-emerald-500/20">S</span>
+        <span class="w-8 h-8 rounded-lg bg-gradient-to-br from-emerald-500 to-indigo-600 flex items-center justify-center text-white font-black shadow-lg shadow-emerald-500/20">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path stroke-linecap="round" stroke-linejoin="round" d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        </span>
         <span>SkewLux<span class="text-emerald-400">.dev</span></span>
       </a>
-      <nav class="hidden md:flex items-center gap-6 text-sm text-slate-300">
+      <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-300">
         <a href="/" class="hover:text-white transition">Reaction Test</a>
         <a href="/typing-test" class="hover:text-white transition">Typing Speed</a>
         <a href="/sensitivity-converter" class="hover:text-white transition">Sens Converter</a>
         <a href="/cps-polling-test" class="hover:text-white transition">CPS &amp; Hz Test</a>
-        <a href="/guides/human-reaction-time-science" class="text-emerald-300 hover:text-emerald-200 transition">Guides</a>
+        <a href="/guides/human-reaction-time-science" class="text-emerald-400 hover:text-emerald-300 transition">Guides</a>
       </nav>
     </div>
+    <nav class="md:hidden flex items-center gap-4 overflow-x-auto px-4 py-2.5 border-t border-slate-800/70 text-xs font-medium text-slate-300 whitespace-nowrap bg-[#070a12]">
+      <a href="/" class="hover:text-white">Reaction</a>
+      <a href="/typing-test" class="hover:text-white">Typing WPM</a>
+      <a href="/sensitivity-converter" class="hover:text-white">Sens Converter</a>
+      <a href="/cps-polling-test" class="hover:text-white">CPS &amp; Hz</a>
+      <a href="/guides/human-reaction-time-science" class="text-emerald-400">Guides</a>
+    </nav>
   </header>
-  <main class="flex-1 max-w-6xl w-full mx-auto px-4 sm:px-6 py-10">
+  <main class="flex-1 max-w-6xl w-full mx-auto px-4 sm:px-6 py-8 sm:py-10">
     <section class="mb-6 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
       <div>
         <span class="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-emerald-500/15 text-emerald-300 border border-emerald-500/30 mb-2">Human Reflex &amp; Input Latency Benchmark</span>
         <h1 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">Visual Reaction Time Test (ms)</h1>
       </div>
-      <div class="flex gap-3 text-xs">
-        <div class="px-4 py-2 rounded-xl bg-slate-900 border border-slate-800"><span class="text-slate-400 block">Best</span><strong id="rxBest" class="text-emerald-400 text-base">-- ms</strong></div>
-        <div class="px-4 py-2 rounded-xl bg-slate-900 border border-slate-800"><span class="text-slate-400 block">5-Try Avg</span><strong id="rxAvg" class="text-indigo-400 text-base">-- ms</strong></div>
-        <div class="px-4 py-2 rounded-xl bg-slate-900 border border-slate-800"><span class="text-slate-400 block">Attempts</span><strong id="rxCount" class="text-white text-base">0 / 5</strong></div>
+      <div class="flex flex-wrap gap-2.5 text-xs">
+        <div class="px-3.5 py-2 rounded-xl bg-slate-900 border border-slate-800"><span class="text-slate-400 block">All-Time Best</span><strong id="rxAllBest" class="text-amber-400 text-base font-mono">-- ms</strong></div>
+        <div class="px-3.5 py-2 rounded-xl bg-slate-900 border border-slate-800"><span class="text-slate-400 block">Session Best</span><strong id="rxBest" class="text-emerald-400 text-base font-mono">-- ms</strong></div>
+        <div class="px-3.5 py-2 rounded-xl bg-slate-900 border border-slate-800"><span class="text-slate-400 block">5-Try Avg</span><strong id="rxAvg" class="text-indigo-400 text-base font-mono">-- ms</strong></div>
       </div>
     </section>
 
     <section class="mb-10">
-      <div id="rxArena" role="button" tabindex="0" class="w-full h-80 sm:h-96 rounded-3xl bg-indigo-950/70 border-2 border-indigo-500/40 flex flex-col items-center justify-center text-center p-6 cursor-pointer select-none transition-colors shadow-2xl">
+      <div class="flex items-center justify-between mb-3 px-1">
+        <div id="rxDots" class="flex items-center gap-2">
+          <span class="w-3 h-3 rounded-full bg-slate-800 border border-slate-700"></span>
+          <span class="w-3 h-3 rounded-full bg-slate-800 border border-slate-700"></span>
+          <span class="w-3 h-3 rounded-full bg-slate-800 border border-slate-700"></span>
+          <span class="w-3 h-3 rounded-full bg-slate-800 border border-slate-700"></span>
+          <span class="w-3 h-3 rounded-full bg-slate-800 border border-slate-700"></span>
+        </div>
+        <div class="flex items-center gap-3 text-xs text-slate-400">
+          <label class="inline-flex items-center gap-1.5 cursor-pointer select-none">
+            <input id="rxSound" type="checkbox" checked class="accent-emerald-500 rounded" />
+            <span>Audio Cue</span>
+          </label>
+          <span id="rxRoundLbl">Round 0 of 5</span>
+        </div>
+      </div>
+
+      <div id="rxArena" role="button" tabindex="0" class="w-full h-80 sm:h-96 rounded-3xl bg-gradient-to-br from-indigo-950/90 via-slate-900 to-slate-950 border-2 border-indigo-500/40 flex flex-col items-center justify-center text-center p-6 cursor-pointer select-none transition-all shadow-2xl">
         <div id="rxBadge" class="text-xs font-bold uppercase tracking-widest text-indigo-300 mb-3">Click or Press Spacebar</div>
         <div id="rxMain" class="text-3xl sm:text-5xl font-black text-white mb-3">Click Anywhere to Start</div>
-        <p id="rxSub" class="text-sm sm:text-base text-slate-300 max-w-md">When the panel turns bright emerald green, click or press Spacebar as fast as possible.</p>
+        <p id="rxSub" class="text-sm sm:text-base text-slate-300 max-w-md">When the panel flashes bright emerald green, click or press Spacebar immediately.</p>
       </div>
-      <div class="flex flex-wrap items-center justify-between gap-3 mt-4">
-        <div id="rxHistory" class="flex flex-wrap gap-2 text-xs text-slate-400"></div>
-        <div class="flex gap-2">
-          <button id="rxShare" type="button" class="px-4 py-2 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-semibold">Copy Score Challenge</button>
-          <button id="rxReset" type="button" class="px-4 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold border border-slate-700">Reset Session</button>
+
+      <div class="mt-4 p-4 rounded-2xl bg-slate-900/70 border border-slate-800">
+        <div class="flex justify-between text-[11px] text-slate-400 mb-1.5">
+          <span>Esports Pro (150ms)</span>
+          <span>Fast (190ms)</span>
+          <span>Human Avg (235ms)</span>
+          <span>Slow (320ms+)</span>
+        </div>
+        <div class="w-full h-2.5 rounded-full bg-slate-950 overflow-hidden relative border border-slate-800">
+          <div class="h-full w-full bg-gradient-to-r from-emerald-500 via-indigo-500 to-rose-500 opacity-35"></div>
+          <div id="rxMarker" class="hidden absolute top-0 bottom-0 w-1.5 bg-white shadow-[0_0_10px_#fff] transition-all duration-300" style="left:50%"></div>
+        </div>
+        <div class="flex flex-wrap items-center justify-between gap-3 mt-4 pt-3 border-t border-slate-800/80">
+          <div id="rxHistory" class="flex flex-wrap gap-2 text-xs text-slate-400"></div>
+          <div class="flex gap-2">
+            <button id="rxShare" type="button" class="px-4 py-2 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-semibold">Copy Score Challenge</button>
+            <button id="rxReset" type="button" class="px-4 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold border border-slate-700">Reset Set</button>
+          </div>
         </div>
       </div>
     </section>
@@ -66,12 +105,12 @@
         <a href="/" class="p-5 rounded-xl bg-slate-900/80 border border-emerald-500/40">
           <div class="text-xs font-semibold text-emerald-400 uppercase">Reflex Benchmark</div>
           <div class="text-base font-bold text-white mt-1 mb-1">Reaction Time Test</div>
-          <p class="text-xs text-slate-400">High-resolution millisecond visual response &amp; 5-round average.</p>
+          <p class="text-xs text-slate-400">Millisecond visual response, percentile bar &amp; 5-round average.</p>
         </a>
         <a href="/typing-test" class="p-5 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-indigo-500/50 transition">
           <div class="text-xs font-semibold text-indigo-400 uppercase">Keyboard Speed</div>
           <div class="text-base font-bold text-white mt-1 mb-1">WPM &amp; Code Typing</div>
-          <p class="text-xs text-slate-400">15s, 30s, 60s, Python/JS code &amp; number-pad typing tests.</p>
+          <p class="text-xs text-slate-400">Word-wrapped 15s, 30s, 60s, JS/Python code &amp; number typing.</p>
         </a>
         <a href="/sensitivity-converter" class="p-5 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-indigo-500/50 transition">
           <div class="text-xs font-semibold text-sky-400 uppercase">FPS Aim Math</div>
@@ -81,7 +120,7 @@
         <a href="/cps-polling-test" class="p-5 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-indigo-500/50 transition">
           <div class="text-xs font-semibold text-amber-400 uppercase">Mouse Hardware</div>
           <div class="text-base font-bold text-white mt-1 mb-1">CPS &amp; Polling Rate</div>
-          <p class="text-xs text-slate-400">Measure clicks per second and real-time USB mouse Hz.</p>
+          <p class="text-xs text-slate-400">Ripple CPS speed test + live USB mouse Hz waveform graph.</p>
         </a>
       </div>
     </section>
@@ -93,20 +132,7 @@
       </section>
       <section>
         <h2 class="text-2xl font-bold text-white mb-3">How SkewLux Measures Millisecond Precision</h2>
-        <p>Standard JavaScript <code>Date.now()</code> timers suffer from system clock drift and coarse resolution. SkewLux records stimulus paint timestamps using the high-resolution <code>performance.now()</code> monotonic clock synchronized with <code>requestAnimationFrame()</code>, isolating exact user response latency inside your browser.</p>
-      </section>
-      <section>
-        <h2 class="text-2xl font-bold text-white mb-4">Frequently Asked Questions</h2>
-        <div class="grid md:grid-cols-2 gap-4">
-          <div class="p-5 rounded-xl bg-slate-900/70 border border-slate-800">
-            <h3 class="text-base font-semibold text-white mb-2">Does monitor refresh rate affect reaction time scores?</h3>
-            <p class="text-sm text-slate-300">Yes. A 60Hz screen refreshes once every 16.67 ms, whereas a 240Hz monitor updates every 4.17 ms—saving up to 12.5 ms before your eyes even see the green stimulus.</p>
-          </div>
-          <div class="p-5 rounded-xl bg-slate-900/70 border border-slate-800">
-            <h3 class="text-base font-semibold text-white mb-2">Can I use the Spacebar instead of clicking my mouse?</h3>
-            <p class="text-sm text-slate-300">Yes. Both mouse/touch taps and the keyboard Spacebar trigger the test, allowing you to compare mechanical keyboard switch actuation against mouse microswitch latency.</p>
-          </div>
-        </div>
+        <p>SkewLux records stimulus paint timestamps using the high-resolution <code>performance.now()</code> monotonic clock synchronized with <code>requestAnimationFrame()</code>, isolating exact user response latency inside your browser.</p>
       </section>
     </article>
 
@@ -117,14 +143,31 @@
         const main = document.getElementById('rxMain');
         const sub = document.getElementById('rxSub');
         const bestEl = document.getElementById('rxBest');
+        const allBestEl = document.getElementById('rxAllBest');
         const avgEl = document.getElementById('rxAvg');
-        const countEl = document.getElementById('rxCount');
+        const roundLbl = document.getElementById('rxRoundLbl');
+        const dotsEl = document.getElementById('rxDots');
         const histEl = document.getElementById('rxHistory');
+        const markerEl = document.getElementById('rxMarker');
+        const soundChk = document.getElementById('rxSound');
 
-        let state = 'idle'; // idle | waiting | ready | result | early
-        let timer = null;
-        let startTime = 0;
-        let scores = [];
+        let state = 'idle', timer = null, startTime = 0, scores = [];
+        let allTimeBest = parseInt(localStorage.getItem('sl_rx_best') || '0', 10);
+        if (allTimeBest > 0) allBestEl.textContent = allTimeBest + ' ms';
+
+        function beep(freq) {
+          if (!soundChk.checked) return;
+          try {
+            const ctx = new (window.AudioContext || window.webkitAudioContext)();
+            const osc = ctx.createOscillator();
+            const gain = ctx.createGain();
+            osc.frequency.value = freq;
+            gain.gain.setValueAtTime(0.08, ctx.currentTime);
+            gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.09);
+            osc.connect(gain); gain.connect(ctx.destination);
+            osc.start(); osc.stop(ctx.currentTime + 0.09);
+          } catch (e) {}
+        }
 
         function rankLabel(ms) {
           if (ms < 165) return 'Top 2% — Esports Reflex Tier';
@@ -134,35 +177,55 @@
         }
 
         function renderStats() {
-          countEl.textContent = scores.length + ' / 5';
+          roundLbl.textContent = 'Round ' + scores.length + ' of 5';
+          let dotsHtml = '';
+          for (let i = 0; i < 5; i++) {
+            dotsHtml += i < scores.length
+              ? '<span class="w-3 h-3 rounded-full bg-emerald-400 shadow-[0_0_8px_#34d399]"></span>'
+              : '<span class="w-3 h-3 rounded-full bg-slate-800 border border-slate-700"></span>';
+          }
+          dotsEl.innerHTML = dotsHtml;
+
           if (!scores.length) {
             bestEl.textContent = '-- ms';
             avgEl.textContent = '-- ms';
             histEl.innerHTML = '';
+            markerEl.classList.add('hidden');
             return;
           }
           const best = Math.min(...scores);
           const avg = Math.round(scores.reduce((a, b) => a + b, 0) / scores.length);
           bestEl.textContent = best + ' ms';
           avgEl.textContent = avg + ' ms';
-          histEl.innerHTML = scores.map((s, idx) => '<span class="px-2.5 py-1 rounded-md bg-slate-900 border border-slate-800 text-slate-300">Try ' + (idx + 1) + ': <strong class="text-emerald-400">' + s + ' ms</strong></span>').join('');
+          if (!allTimeBest || best < allTimeBest) {
+            allTimeBest = best;
+            localStorage.setItem('sl_rx_best', String(best));
+            allBestEl.textContent = best + ' ms';
+          }
+          const pct = Math.max(2, Math.min(98, ((avg - 130) / (340 - 130)) * 100));
+          markerEl.style.left = pct + '%';
+          markerEl.classList.remove('hidden');
+          histEl.innerHTML = scores.map((s, idx) => '<span class="px-2.5 py-1 rounded-md bg-slate-950 border border-slate-800 text-slate-300">Try ' + (idx + 1) + ': <strong class="text-emerald-400">' + s + ' ms</strong></span>').join('');
         }
 
         function startRound() {
           if (scores.length >= 5) scores = [];
           renderStats();
           state = 'waiting';
-          arena.className = 'w-full h-80 sm:h-96 rounded-3xl bg-rose-950/85 border-2 border-rose-500/60 flex flex-col items-center justify-center text-center p-6 cursor-pointer select-none transition-colors shadow-2xl';
+          arena.className = 'w-full h-80 sm:h-96 rounded-3xl bg-rose-950/90 border-2 border-rose-500/60 flex flex-col items-center justify-center text-center p-6 cursor-pointer select-none transition-colors shadow-2xl';
           badge.className = 'text-xs font-bold uppercase tracking-widest text-rose-300 mb-3';
           badge.textContent = 'Steady...';
+          main.className = 'text-3xl sm:text-5xl font-black text-white mb-3';
           main.textContent = 'Wait for Green...';
-          sub.textContent = 'Do not click until the screen turns bright emerald green.';
-          const delay = 1400 + Math.random() * 2800;
+          sub.className = 'text-sm sm:text-base text-slate-300 max-w-md';
+          sub.textContent = 'Do not click until the screen flashes emerald green.';
+          const delay = 1400 + Math.random() * 2600;
           clearTimeout(timer);
           timer = setTimeout(() => {
             requestAnimationFrame(() => {
               state = 'ready';
               startTime = performance.now();
+              beep(740);
               arena.className = 'w-full h-80 sm:h-96 rounded-3xl bg-emerald-500 border-2 border-emerald-300 flex flex-col items-center justify-center text-center p-6 cursor-pointer select-none shadow-2xl';
               badge.className = 'text-xs font-bold uppercase tracking-widest text-emerald-950 mb-3';
               badge.textContent = 'NOW!';
@@ -176,17 +239,18 @@
 
         function trigger() {
           if (state === 'idle' || state === 'result' || state === 'early') {
-            main.className = 'text-3xl sm:text-5xl font-black text-white mb-3';
-            sub.className = 'text-sm sm:text-base text-slate-300 max-w-md';
             startRound();
           } else if (state === 'waiting') {
             clearTimeout(timer);
             state = 'early';
-            arena.className = 'w-full h-80 sm:h-96 rounded-3xl bg-amber-950/80 border-2 border-amber-500/60 flex flex-col items-center justify-center text-center p-6 cursor-pointer select-none shadow-2xl';
+            beep(220);
+            arena.className = 'w-full h-80 sm:h-96 rounded-3xl bg-amber-950/85 border-2 border-amber-500/60 flex flex-col items-center justify-center text-center p-6 cursor-pointer select-none shadow-2xl';
             badge.className = 'text-xs font-bold uppercase tracking-widest text-amber-300 mb-3';
             badge.textContent = 'False Start';
+            main.className = 'text-3xl sm:text-5xl font-black text-white mb-3';
             main.textContent = 'Too Soon!';
-            sub.textContent = 'You clicked before the screen turned green. Click to retry this round.';
+            sub.className = 'text-sm sm:text-base text-slate-300 max-w-md';
+            sub.textContent = 'You clicked before green. Click anywhere to retry.';
           } else if (state === 'ready') {
             const diff = Math.max(1, Math.round(performance.now() - startTime));
             scores.push(diff);
@@ -195,10 +259,10 @@
             arena.className = 'w-full h-80 sm:h-96 rounded-3xl bg-slate-900 border-2 border-indigo-500/50 flex flex-col items-center justify-center text-center p-6 cursor-pointer select-none shadow-2xl';
             badge.className = 'text-xs font-bold uppercase tracking-widest text-emerald-400 mb-2';
             badge.textContent = rankLabel(diff);
-            main.className = 'text-4xl sm:text-6xl font-black text-white mb-3';
+            main.className = 'text-4xl sm:text-6xl font-black text-white mb-3 font-mono';
             main.textContent = diff + ' ms';
             sub.className = 'text-sm sm:text-base text-slate-300';
-            sub.textContent = scores.length < 5 ? 'Click anywhere for Round ' + (scores.length + 1) + ' of 5.' : '5-Round Set Complete! Click to start a new 5-round set.';
+            sub.textContent = scores.length < 5 ? 'Click anywhere for Round ' + (scores.length + 1) + ' of 5.' : '5-Round Set Complete! Click to start a new set.';
           }
         }
 
@@ -210,36 +274,32 @@
           }
         });
         document.getElementById('rxReset').addEventListener('click', () => {
-          clearTimeout(timer);
-          scores = [];
-          state = 'idle';
-          renderStats();
-          arena.className = 'w-full h-80 sm:h-96 rounded-3xl bg-indigo-950/70 border-2 border-indigo-500/40 flex flex-col items-center justify-center text-center p-6 cursor-pointer select-none transition-colors shadow-2xl';
+          clearTimeout(timer); scores = []; state = 'idle'; renderStats();
+          arena.className = 'w-full h-80 sm:h-96 rounded-3xl bg-gradient-to-br from-indigo-950/90 via-slate-900 to-slate-950 border-2 border-indigo-500/40 flex flex-col items-center justify-center text-center p-6 cursor-pointer select-none transition-all shadow-2xl';
           badge.className = 'text-xs font-bold uppercase tracking-widest text-indigo-300 mb-3';
           badge.textContent = 'Click or Press Spacebar';
           main.className = 'text-3xl sm:text-5xl font-black text-white mb-3';
           main.textContent = 'Click Anywhere to Start';
           sub.className = 'text-sm sm:text-base text-slate-300 max-w-md';
-          sub.textContent = 'When the panel turns bright emerald green, click or press Spacebar as fast as possible.';
+          sub.textContent = 'When the panel flashes bright emerald green, click or press Spacebar immediately.';
         });
         document.getElementById('rxShare').addEventListener('click', function() {
-          const best = scores.length ? Math.min(...scores) + ' ms' : 'untested';
-          const avg = scores.length ? Math.round(scores.reduce((a, b) => a + b, 0) / scores.length) + ' ms' : 'untested';
-          navigator.clipboard.writeText('My SkewLux.dev Reaction Time: Best ' + best + ' (Avg ' + avg + ') — Can you beat it? https://skewlux.dev/');
+          const best = scores.length ? Math.min(...scores) + ' ms' : (allTimeBest ? allTimeBest + ' ms' : 'untested');
+          navigator.clipboard.writeText('My SkewLux.dev Reaction Time: ' + best + ' — Can you beat it? https://skewlux.dev/');
           this.textContent = 'Copied Challenge!';
           setTimeout(() => this.textContent = 'Copy Score Challenge', 1500);
         });
       })();
     </script>
   </main>
-  <footer class="border-t border-slate-800/80 py-10 text-xs text-slate-400 mt-16">
+  <footer class="border-t border-slate-800/80 py-10 text-xs text-slate-400 mt-16 bg-[#070a12]">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 grid sm:grid-cols-4 gap-8">
       <div>
         <div class="font-bold text-white text-sm mb-2">SkewLux.dev</div>
-        <p class="leading-relaxed text-slate-400">Zero-latency browser benchmarks for reaction time, WPM typing speed, cross-game mouse sensitivity, and peripheral polling rates.</p>
+        <p class="leading-relaxed text-slate-400">Zero-latency browser benchmarks for visual reaction time, WPM typing speed, cross-game sensitivity, and USB mouse polling rates.</p>
       </div>
       <div>
-        <div class="font-semibold text-slate-200 mb-2">Benchmark Studios</div>
+        <div class="font-semibold text-slate-200 mb-2">Interactive Benchmarks</div>
         <ul class="space-y-1.5">
           <li><a href="/" class="hover:text-white">Visual Reaction Time Test</a></li>
           <li><a href="/typing-test" class="hover:text-white">WPM &amp; Code Typing Test</a></li>
