@@ -1,0 +1,12 @@
+# Skewlux — Complete Browser Latency, Typing & Gaming Tool Reference (skewlux.dev)
+> Zero-backend reaction time, CPS polling, typing WPM, and FPS sensitivity converter engineered by Mohammad Junaid.
+
+## Technical Architecture
+Skewlux executes every diagnostic test locally inside the browser using performance.now() high-resolution timers, equestAnimationFrame frame-pacing loops, and client-side math—ensuring zero server latency interference.
+
+## Complete Tool Directory
+1. **Reaction & Display Telemetry (/)**: Sub-millisecond visual and auditory reflex testing plus display refresh rate diagnostics.
+2. **CPS & Mouse Polling Rate Test (/cps-polling-test)**: Measures click burst frequency and mouse hardware polling stability (125Hz to 8000Hz).
+3. **Typing Speed Suite (/typing-test, /100-words-typing-test, /viral-typing-challenge)**: Measures WPM, accuracy, and typing rhythm without login.
+4. **FPS Sensitivity Converter (/sensitivity-converter)**: Converts mouse sensitivity, DPI, eDPI, and cm/360 across competitive shooters.
+5. **Engineering & Performance Guides (/guides/)**: Technical breakdowns on human reaction time, mouse polling rates, typing mechanics, and aim sensitivity.

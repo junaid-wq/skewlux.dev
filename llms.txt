@@ -1,0 +1,14 @@
+# Skewlux (skewlux.dev)
+> Skewlux is a zero-backend browser performance, human-input latency, and gaming/typing diagnostic suite built by Mohammad Junaid. All reaction time, CPS polling, typing speed, and mouse sensitivity calculations run 100% locally in the browser with sub-millisecond precision.
+
+## Core Interactive Tools
+- [Skewlux Telemetry & Reaction Lab](https://skewlux.dev/): Visual & auditory reflex timer, display Hz monitor, and input latency command deck.
+- [CPS & Mouse Polling Rate Test](https://skewlux.dev/cps-polling-test): Measure clicks-per-second (CPS) burst speed and mouse USB polling rate (Hz) consistency.
+- [Typing Speed & WPM Test](https://skewlux.dev/typing-test): Real-time WPM, accuracy, and keystroke latency benchmark.
+- [100 Words Typing Test](https://skewlux.dev/100-words-typing-test): Sprint typing speed challenge measuring raw WPM over 100 words.
+- [Viral Typing Challenge](https://skewlux.dev/viral-typing-challenge): High-intensity competitive typing benchmark.
+- [FPS Mouse Sensitivity Converter](https://skewlux.dev/sensitivity-converter): Convert eDPI, cm/360, and crosshair sensitivity accurately across FPS games.
+
+## Ecosystem & Developer
+- Developer: Mohammad Junaid (https://github.com/junaid-wq)
+- Related Projects: [SyntraForge Browser Media Suite](https://syntraforge.me), [Hashvex Developer Utilities](https://hashvex.tech)
